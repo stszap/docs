@@ -1,7 +1,8 @@
 {
   "docs": {
     "Welcome": [
-      "index"
+      "index",
+      "swagger"
     ],
     "Ecosystem": [
       "ecosystem/overview",
