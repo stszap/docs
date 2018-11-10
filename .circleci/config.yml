@@ -26,7 +26,7 @@ jobs:
       - run: "VERSION=${CIRCLE_TAG:-master}; rm -rf ../ory-am/docs/guides/$VERSION/* || exit 0"
       - run: "VERSION=${CIRCLE_TAG:-master}; rm -rf ../ory-am/docs/apis/$VERSION/* || exit 0"
 
-      - run: "cp -R ./build/faq/* ../ory-am/docs/faq/"
+      # - run: "cp -R ./build/faq/* ../ory-am/docs/faq/"
 
       - run: "VERSION=${CIRCLE_TAG:-master}; cp -R ./build/guides/* ../ory-am/docs/guides/$VERSION/"
       - run: "VERSION=${CIRCLE_TAG:-master}; cp -R ./apis/* ../ory-am/docs/apis/$VERSION/"

@@ -1,0 +1,51 @@
+https://www.ory.sh/docs/guides/master/ http://localhost:3001/docs/
+https://www.ory.sh/docs/guides/master/updating/ http://localhost:3001/docs/ecosystem/upgrading
+https://www.ory.sh/docs/guides/master/telemetry/ http://localhost:3001/docs/ecosystem/telemetry
+
+
+https://www.ory.sh/docs/guides/master/hydra/ http://localhost:3001/docs/hydra/
+https://www.ory.sh/docs/guides/master/hydra/1-tutorial/ http://localhost:3001/docs/hydra/5min-tutorial
+https://www.ory.sh/docs/guides/master/hydra/2-environment/ http://localhost:3001/docs/hydra/dependencies-environment
+https://www.ory.sh/docs/guides/master/hydra/2-environment/1-securing-ory-hydra.html http://localhost:3001/docs/hydra/production
+
+https://www.ory.sh/docs/guides/master/hydra/3-overview/ http://localhost:3001/docs/hydra/oauth2
+https://www.ory.sh/docs/guides/master/hydra/3-overview/1-oauth2.html http://localhost:3001/docs/hydra/oauth2
+https://www.ory.sh/docs/guides/master/hydra/3-overview/2-jwk.html http://localhost:3001/docs/hydra/jwks
+https://www.ory.sh/docs/guides/master/hydra/3-overview/3-limitations.html http://localhost:3001/docs/hydra/limitations
+
+https://www.ory.sh/docs/guides/master/hydra/4-install/ http://localhost:3001/docs/hydra/configure-deploy
+https://www.ory.sh/docs/guides/master/hydra/5-security/ http://localhost:3001/docs/hydra/security-architecture
+
+https://www.ory.sh/docs/guides/master/hydra/6-how-to/1-production.html http://localhost:3001/docs/hydra/production
+https://www.ory.sh/docs/guides/master/hydra/6-how-to/2-architecture.html http://localhost:3001/docs/hydra/integration
+https://www.ory.sh/docs/guides/master/hydra/6-how-to/3-advanced.html http://localhost:3001/docs/hydra/advanced
+https://www.ory.sh/docs/guides/master/hydra/6-how-to/4-debug.html http://localhost:3001/docs/hydra/debugging
+
+https://www.ory.sh/docs/guides/master/hydra/7-sdk/ http://localhost:3001/docs/hydra/sdk/
+https://www.ory.sh/docs/guides/master/hydra/7-sdk/1-go.html http://localhost:3001/docs/hydra/sdk/go
+https://www.ory.sh/docs/guides/master/hydra/7-sdk/2-js.html http://localhost:3001/docs/hydra/sdk/js
+
+https://www.ory.sh/docs/guides/master/hydra/8-faq/ http://localhost:3001/docs/hydra/faq
+https://www.ory.sh/docs/guides/master/hydra/9-appendix/ http://localhost:3001/docs/hydra/appendix
+
+
+https://www.ory.sh/docs/guides/master/oathkeeper/ http://localhost:3001/docs/oathkeeper/
+https://www.ory.sh/docs/guides/master/oathkeeper/1-overview/1-rules.html http://localhost:3001/docs/oathkeeper/api-access-rules
+https://www.ory.sh/docs/guides/master/oathkeeper/1-overview/2-installation.html http://localhost:3001/docs/oathkeeper/configure-deploy
+https://www.ory.sh/docs/guides/master/oathkeeper/1-overview/3-configuration.html http://localhost:3001/docs/oathkeeper/configure-deploy
+https://www.ory.sh/docs/guides/master/oathkeeper/1-overview/5-proxy-judge.html http://localhost:3001/docs/oathkeeper/control-flow
+# WITHOUT REPLACEMENT: https://www.ory.sh/docs/guides/master/oathkeeper/1-overview/4-deployment.html
+
+
+https://www.ory.sh/docs/guides/master/keto/ http://localhost:3001/docs/keto/
+https://www.ory.sh/docs/guides/master/keto/1-overview/1-policies.html http://localhost:3001/docs/keto/engines/acp-ory
+https://www.ory.sh/docs/guides/master/keto/1-overview/2-warden.html http://localhost:3001/docs/keto/engines/acp-ory
+https://www.ory.sh/docs/guides/master/keto/1-overview/3-roles.html http://localhost:3001/docs/keto/engines/acp-ory
+https://www.ory.sh/docs/guides/master/keto/1-overview/4-best-practices.html http://localhost:3001/docs/keto/engines/acp-ory
+https://www.ory.sh/docs/guides/master/keto/1-overview/5-conditions.html  http://localhost:3001/docs/keto/engines/acp-ory
+
+https://www.ory.sh/docs/guides/master/keto/1-overview/6-installation.html http://localhost:3001/docs/keto/install
+https://www.ory.sh/docs/guides/master/keto/1-overview/7-configuration.html http://localhost:3001/docs/keto/configure-deploy
+
+https://www.ory.sh/docs/guides/master/performance/ http://localhost:3001/docs/performance/
+https://www.ory.sh/docs/guides/master/performance/1-hydra.html http://localhost:3001/docs/performance/hydra
