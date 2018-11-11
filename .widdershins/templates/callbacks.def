@@ -1,6 +1,6 @@
 {{? data.operation.callbacks}}
 
-### Callbacks
+#### Callbacks
 
 <div class="content well">
 
@@ -8,7 +8,7 @@
 
 {{ for (var c in data.operation.callbacks) { }}
 
-#### {{=c}}
+##### {{=c}}
 
 {{ var callback = data.operation.callbacks[c]; }}
 

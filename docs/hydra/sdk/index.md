@@ -8,20 +8,8 @@ Unfortunately, `swagger-codegen` has serious breaking changes in the generated c
 we do not make backwards compatibility promises with regards to the generated SDKs. We hope to improve this process
 in the future.
 
-We encourage you to not use the SDKs (due to mediocre code quality) but to implement the simple REST
-calls yourself instead. Most calls can be handled with one-liners in many languages. In JavaScript you can create
-a client with:
-
-```js
-fetch(
-    'http://hydra/clients',
-    {
-        method: 'POST',
-        headers: {"Content-Type": "application/json"},
-        body: JSON.encode({ client_id: 'foo', client_secret: 'bar' })
-    }
-).then(r => r.JSON())
-```
+Before you check out the SDKs, head over to the [REST API](api.md) documentation which includes code samples for common
+programming languages for each REST endpoint.
 
 > The SDKs do not provide a good API for dealing with OAuth 2.0 Flows (e.g. Authorize Code Flow, Refresh Flow, ...).
 But there are tons of [libraries available for consuming OAuth 2.0](https://oauth.net/code/). Do not write your

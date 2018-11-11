@@ -7,14 +7,6 @@ fs.readFile(file, (err, b) => {
     throw err
   }
 
-  const warning = `> You are viewing the REST API documentation. This documentation is auto-generated
-from a swagger specification which itself is generated from annotations in the source files of the project. This
-transformation pipeline is far from perfect but the best we have so far. If you find issues in the respective
-documentation, please do not edit the markdown files directly (as they are generated) but raise an issue
-on the project's GitHub instead. This documentation will improve over time with your help! If you have ideas
-how to improve this part of the documentation, feel free to share them in a
-[GitHub issue](https://github.com/ory/docs/issues/new) any time.`
-
   const t = b.toString()
     .replace(/^title:(.*)/im, 'title: REST API\nid: api') // improve title, add docusaurus id
     .replace(/^language_tabs:.*\n/im, '') // not supported by docusaurus
@@ -23,21 +15,20 @@ how to improve this part of the documentation, feel free to share them in a
     .replace(/^search.*\n/im, '') // not supported by docusaurus
     .replace(/^highlight_theme.*\n/im, '') // not supported by docusaurus
     .replace(/^headingLevel.*\n/im, '') // not supported by docusaurus
-    .replace(/^<h1.*\n/im, '') // remove first headline (this is the title of the main package usually)
-    .replace(/^> Scroll down for example requests and responses.*\n/im, '') // Irrelevant information
-    .replace(/^Base Urls:*\n/im, '') // Irrelevant information, let's replace it with something useful instead!
-    .replace(/^\* <a href="\/">\/<\/a>\n/im, '') // Irrelevant information
-    .replace(/<h2 id="toc([a-zA-Z0-9_\-]+)">([a-zA-Z0-9_\-]+)<\/h2>\n/gim, '## $2')
-    .replace(/<h1 id="ory-([a-zA-Z0-9_\-]+)">([a-zA-Z0-9_\-]+)<\/h2>\n/gim, '## $2')
+    // .replace(/^<h1.*\n/im, '') // remove first headline (this is the title of the main package usually)
+    // .replace(/^> Scroll down for example requests and responses.*\n/im, '') // Irrelevant information
+    // .replace(/^Base Urls:*\n/im, '') // Irrelevant information, let's replace it with something useful instead!
+    // .replace(/^\* <a href="\/">\/<\/a>\n/im, '') // Irrelevant information
+    // .replace(/<h2 id="toc([a-zA-Z0-9_\-]+)">([a-zA-Z0-9_\-]+)<\/h2>\n/gim, '## $2')
+    // .replace(/<h1 id="ory-([a-zA-Z0-9_\-]+)">([a-zA-Z0-9_\-]+)<\/h2>\n/gim, '## $2')
     .replace(/\n\s*\n/g, '\n\n', -1)
     .replace(/^-(\s.*)\n/gim, '-$1',-1)
-    .replace(/\n\n---/gi, '\n---\n\n' + warning)
-    .replace(/^<h3 id="[0-9a-zA-Z0-9\-_.]+-responses">Responses<\/h3>$/gim, '#### Summary',-1)
-    .replace(/^> Example responses/gim, '### Responses',-1)
-    .replace(/^> Body parameter/gim, '### Request body',-1)
-    .replace(/^> ([0-9]+) Response$/gim, '#### $1 response',-1)
-
-
+    .replace(/\n\n---/gi, '\n---\n\n')
+    .replace(/\n\s*\n```/gi, '\n```')
+    // .replace(/^<h3 id="[0-9a-zA-Z0-9\-_.]+-responses">Responses<\/h3>$/gim, '#### Summary',-1)
+    // .replace(/^> Example responses/gim, '### Responses',-1)
+    // .replace(/^> Body parameter/gim, '### Request body',-1)
+    .replace(/^> ([0-9]+) Response$/gim, '###### $1 response',-1)
 
   fs.writeFile(file, t, (err) => {
     if (err) {

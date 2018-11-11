@@ -1,27 +1,13 @@
-<h1 id="{{=data.title_prefix}}">{{=data.api.info.title}} {{=data.version}}</h1>
-
-> Scroll down for {{? data.header.language_tabs.length}}code samples, {{?}}example requests and responses.{{? data.header.language_tabs.length}} Select a language for code samples from the tabs above or the mobile navigation menu.{{?}}
-
 {{? data.api.info.description}}{{=data.api.info.description}}{{?}}
 
-{{? data.api.servers }}
-Base URLs:
-{{~data.api.servers :s}}
-* <a href="{{=s.url}}">{{=s.url}}</a>
-{{ for(var v in s.variables) { }}
-    * **{{=v}}** - {{=s.variables[v].description||''}} Default: {{=s.variables[v].default}}
-{{? s.variables[v].enum}}
-{{~ s.variables[v].enum :e}}
-        * {{= e}}
-{{~}}
-{{?}}
-{{ } }}
-{{~}}
-{{?}}
-
-{{? data.api.info.termsOfService}}<a href="{{=data.api.info.termsOfService}}">Terms of service</a>{{?}}
-{{? data.api.info.contact}}{{? data.api.info.contact.email}}Email: <a href="mailto:{{=data.api.info.contact.email}}">{{=data.api.info.contact.name || 'Support'}}</a> {{?}}{{? data.api.info.contact.url}}Web: <a href="{{=data.api.info.contact.url}}">{{= data.api.info.contact.name || 'Support'}}</a> {{?}}{{?}}
-{{? data.api.info.license}}{{? data.api.info.license.url}}License: <a href="{{=data.api.info.license.url}}">{{=data.api.info.license.name}}</a>{{??}} License: {{=data.api.info.license.name}}{{?}}{{?}}
+> You are viewing a REST API documentation. This documentation is auto-generated from a swagger specification which
+itself is generated from annotations in the source files of the project. It is possible that this documentation includes
+bugs and that code samples are incomplete or wrong.
+>
+> If you find issues in the respective documentation, please do not edit the
+markdown files directly (as they are generated) but raise an issue on the project's GitHub instead. This documentation
+will improve over time with your help! If you have ideas how to improve this part of the documentation, feel free to
+share them in a [GitHub issue](https://github.com/ory/docs/issues/new) any time.
 
 {{? data.api.components && data.api.components.securitySchemes }}
 {{#def.security}}
@@ -30,7 +16,8 @@ Base URLs:
 {{ for (var r in data.resources) { }}
 {{ data.resource = data.resources[r]; }}
 
-<h1 id="{{=data.title_prefix+'-'+data.utils.slugify(r)}}">{{= r}}</h1>
+<a id="{{=data.title_prefix+'-'+data.utils.slugify(r)}}"></a>
+## {{= r}}
 
 {{? data.resource.description }}{{= data.resource.description}}{{?}}
 
@@ -49,13 +36,14 @@ Base URLs:
 {{ } /* of resources */ }}
 
 {{? data.api.components && data.api.components.schemas }}
-# Schemas
+## Schemas
 
 {{ for (var s in data.components.schemas) { }}
 {{ var origSchema = data.components.schemas[s]; }}
 {{ var schema = data.api.components.schemas[s]; }}
 
-<h2 id="tocS{{=s.toLowerCase()}}">{{=s}}</h2>
+<a id="tocS{{=s.toLowerCase()}}">{{=s}}</a>
+#### {{=s}}
 
 <a id="schema{{=s.toLowerCase()}}"></a>
 
@@ -88,7 +76,7 @@ Base URLs:
 {{?}}
 
 {{? block===blocks[0] }}
-### Properties
+#### Properties
 {{?}}
 
 {{? block.rows.length}}|Name|Type|Required|Restrictions|Description|
@@ -101,7 +89,7 @@ Base URLs:
 {{?}}
 
 {{? enums.length > 0 }}
-#### Enumerated Values
+##### Enumerated Values
 
 |Property|Value|
 |---|---|

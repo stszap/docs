@@ -8,10 +8,9 @@
     "version": "docusaurus-version",
     "rename-version": "docusaurus-rename-version",
     "api": "npm-run-all swagger:generate:* swagger:cleanup:*",
-    "swagger": "widdershins -u ../widdershins/templates -e ../.widdershins/config.json ../apis/hydra.json -o ../docs/hydra/sdk/api.md",
-    "swagger:generate:hydra": "widdershins -e ./widdershins.json ../apis/hydra.json -o ../docs/hydra/sdk/api.md",
-    "swagger:generate:oathkeeper": "widdershins  -e ./widdershins.json ../apis/oathkeeper.json -o ../docs/oathkeeper/sdk/api.md",
-    "swagger:generate:keto": "widdershins  -e ./widdershins.json ../apis/keto.json -o ../docs/keto/sdk/api.md",
+    "swagger:generate:hydra": "widdershins -u ../.widdershins/templates -e ../.widdershins/config.json ../apis/hydra.json -o ../docs/hydra/sdk/api.md",
+    "swagger:generate:oathkeeper": "widdershins -u ../.widdershins/templates -e ../.widdershins/config.json ../apis/oathkeeper.json -o ../docs/oathkeeper/sdk/api.md",
+    "swagger:generate:keto": "widdershins -u ../.widdershins/templates -e ../.widdershins/config.json ../apis/keto.json -o ../docs/keto/sdk/api.md",
     "swagger:cleanup:hydra": "node fix-api.js ../docs/hydra/sdk/api.md",
     "swagger:cleanup:oathkeeper": "node fix-api.js ../docs/oathkeeper/sdk/api.md",
     "swagger:cleanup:keto": "node fix-api.js ../docs/keto/sdk/api.md"

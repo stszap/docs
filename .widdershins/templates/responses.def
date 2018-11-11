@@ -4,13 +4,10 @@
 {{ if (response.content) data.responseSchemas = true; }}
 {{~}}
 
-{{? data.responseSchemas }}
-> Example responses
+#### Responses
 
-{{= data.utils.getResponseExamples(data) }}
-{{?}}
-
-<h3 id="{{=data.operationUniqueSlug}}-responses">Responses</h3>
+<a id="{{=data.operationUniqueSlug}}-responses"></a>
+##### Overview
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -22,7 +19,8 @@
 {{ if (response.content && !response.$ref && !data.utils.isPrimitive(response.type)) data.responseSchemas = true; }}
 {{~}}
 {{? data.responseSchemas }}
-<h3 id="{{=data.operationUniqueSlug}}-responseschema">Response Schema</h3>
+<a id="{{=data.operationUniqueSlug}}-responseschema"></a>
+##### Response Schema</h3>
 {{~ data.responses :response}}
 {{? response.content && !response.$ref && !data.utils.isPrimitive(response.type)}}
 {{ var responseKey = Object.keys(response.content)[0]; }}
@@ -54,7 +52,7 @@ Status Code **{{=response.status}}**
 {{?}}
 
 {{? enums.length > 0 }}
-#### Enumerated Values
+###### Enumerated Values
 
 |Property|Value|
 |---|---|
@@ -73,11 +71,22 @@ Status Code **{{=response.status}}**
 {{ data.responseHeaders = data.utils.getResponseHeaders(data); }}
 {{? data.responseHeaders.length }}
 
-### Response Headers
+##### Response Headers
 
 |Status|Header|Type|Format|Description|
 |---|---|---|---|---|
 {{~ data.responseHeaders :h}}|{{=h.status}}|{{=h.header}}|{{=h.type}}|{{=h.format||''}}|{{=h.description||'none'}}|
 {{~}}
 
+{{?}}
+
+{{ data.responseSchemas = false; }}
+{{~ data.responses :response }}
+{{ if (response.content) data.responseSchemas = true; }}
+{{~}}
+
+{{? data.responseSchemas }}
+##### Examples
+
+{{= data.utils.getResponseExamples(data) }}
 {{?}}
