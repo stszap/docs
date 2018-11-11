@@ -108,7 +108,7 @@ about the authentication of an End-User.
 
 OpenID Connect implements authentication as an extension to the OAuth 2.0 authorization process.
 
-Source [OpenID Connect Core 1.0](openid.net/specs/openid-connect-core-1_0.html)
+Source [OpenID Connect Core 1.0](http://openid.net/specs/openid-connect-core-1_0.html)
 
 OpenID Connect allows clients of all types, including Web-based, mobile, and JavaScript clients,
 to request and receive information about authenticated sessions and end-users. The specification

@@ -6,7 +6,7 @@ title: 5 Minute Tutorial
 To get started quickly, we provide a Docker Compose based example for setting up ORY Hydra, a PostgreSQL instance
 and an exemplary user login & consent app. You need to have the latest Docker as well as Docker Compose version installed.
 
-<img src="../images/oauth2-flow.gif" alt="OAuth2 Flow">
+<img src="../../images/docs/hydra/oauth2-flow.gif" alt="OAuth2 Flow">
 
 Next, clone (`git clone https://github.com/ory/hydra.git`), [download](https://github.com/ory-am/hydra/archive/master.zip),
 or use `go get -d github.com/ory/hydra` - if you have Go (1.10+) installed on you system - to download the Docker Compose
@@ -32,7 +32,7 @@ Docker here. If you do use the CLI locally, you can omit `docker exec -it hydra_
 
 You will notice that two ports are being used. Port `4444` and port `4445`. The former is for request to ORY Hydra's public
 endpoints. The latter to its administrative endpoints. For more information on this, head over to
-[Securing ORY Hydra](../2-environment/securing-ory-hydra.md). If you want to run ORY Hydra admin and
+[Exposing Administrative and Public API Endpoints](production.md). If you want to run ORY Hydra admin and
 public services in two separate containers, run
 
 ```

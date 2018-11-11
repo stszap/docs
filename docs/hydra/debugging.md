@@ -179,7 +179,7 @@ which you have exposed on port `16686` at http://localhost:16686/search. You can
 
 As an example, here is a trace created by making a bad request to the `POST /clients` endpoint:
 
-![Sample Trace](../images/sample_trace.png)
+![Sample Trace](../../images/docs/hydra/sample_trace.png)
 
 At a glance, you are able to see that:
 

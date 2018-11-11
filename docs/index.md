@@ -1,9 +1,7 @@
 ---
 id: index
-title: ORY Developer Guide
+title: ORY Developer Documentation
 ---
-
-Welcome to the ORY Developer Guide!
 
 ## GitHub
 
@@ -22,9 +20,9 @@ While this developer guide focuses on explaining concepts,
 the concrete REST APIs are documented using swagger and
 can be viewed here:
 
-* [ORY Hydra](https://www.ory.sh/docs/api/hydra)
-* [ORY Oathkeeper](https://www.ory.sh/docs/api/oathkeeper)
-* [ORY Keto](https://www.ory.sh/docs/api/keto)
+* [ORY Hydra](./hydra/sdk/api.md)
+* [ORY Oathkeeper](./oathkeeper/sdk/api.md)
+* [ORY Keto](./keto/sdk/api.md)
 
 ## SDK Docs
 

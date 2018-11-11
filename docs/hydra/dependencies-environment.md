@@ -3,7 +3,7 @@ id: dependencies-environment
 title: Dependencies & Environment
 ---
 
-ORY Hydra is built cloud native and implements [12factor](http://12factor.net) principles. The Docker Image is 5 MB light
+ORY Hydra is built cloud native and implements [12factor](https://www.12factor.net/) principles. The Docker Image is 5 MB light
 and versioned with [verbose upgrade instructions](https://github.com/ory/hydra/blob/master/UPGRADE.md)
 and [detailed changelogs](https://github.com/ory/hydra/blob/master/CHANGELOG.md). Auto-scaling, migrations, health checks,
 it all works with zero additional work required. It is possible to run ORY Hydra on any platform, including but not limited

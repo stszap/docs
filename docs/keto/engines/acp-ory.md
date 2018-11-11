@@ -96,7 +96,7 @@ The `:` is always understood as a delimiter. The following syntax is supported b
 ### Regular Expressions
 
 ORY Keto allows you to apply pattern matching with regular expressions as well. Depending on how you name your subjects,
-resources, and actions (for more on that topic go to the [Best Practices](./4-best-practices) section), you can apply
+resources, and actions (for more on that topic go to the [Best Practices](#best-practices) section), you can apply
 pattern matching using regular expressions.
 
 ```json

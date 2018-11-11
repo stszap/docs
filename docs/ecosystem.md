@@ -51,14 +51,14 @@ Tokens, SAML Assertions, JSON Web Tokens, ...) and allows you to define advanced
 And there's of course an endpoint that tells you if a certain set of credentials (e.g. an OAuth 2.0 Access Token) is allowed
 to modify that blog post.
 
-![The full ORY Ecosystem](../images/ory-ecosystem.png)
+![The full ORY Ecosystem](../images/docs/ecosystem/ory-ecosystem.png)
 If you were to use the full ORY Ecosystem, it would probably look something like this. Keep in mind that any component
 shown here can be replaced or removed, depending on your use case.
 
 Now you know what this ecosystem has to offer you. To get some more information on the services, read the developer guide by
 selecting the software of your choice from the navigation on the left!
 
-Contact us at [hi@ory.sh](hi@ory.sh) if you need consulting with your specific project.
+Contact us at [hi@ory.sh](mailto:hi@ory.sh) if you need consulting with your specific project.
 
 ## Cloud Native Architecture
 
@@ -67,7 +67,7 @@ All ORY technology is built cloud native and follows [12factor.net](https://www.
 ### 12 Factor Concepts
 
 The following is a collection of core concepts to ORY's technological ideology. They are summaries of the
-(12factor principles)[https://www.12factor.net] written by Adam Wiggins.
+[12factor principles](https://www.12factor.net) written by Adam Wiggins.
 
 #### Codebase: One codebase tracked in revision control, many deploys
 

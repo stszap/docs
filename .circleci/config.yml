@@ -59,16 +59,29 @@ jobs:
       - run: git remote add origin https://arekkas:$GITHUB_TOKEN@github.com/ory/docs.git
       - run: git push origin HEAD:master
 
+  test:
+    docker:
+      - image: circleci/node:9-browsers
+    working_directory: /home/circleci/docs
+    environment:
+      - GITBOOK_DIR: /home/circleci/docs/.gitbook
+      - VERSION: latest
+    steps:
+      - checkout
+      - ./website/scripts/test-linkes
+
 workflows:
   version: 2
   "publish-master":
     jobs:
+      - test
       - publish:
           filters:
             branches:
               only: master
   "publish-tag":
     jobs:
+      - test
       - publish:
           filters:
             branches:

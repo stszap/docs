@@ -7,7 +7,7 @@ The goal of this chapter is to introduce you to a fully functional set up that i
 User Login & Consent Provider reference implementation.
 
 The goal of this section is to familiarize you with the specifics of setting up ORY Hydra in your environment.
-Before starting with this section, please check out the [tutorial](../1-tutorial). It will teach you the most important flows
+Before starting with this section, please check out the [tutorial](5min-tutorial.md). It will teach you the most important flows
 and settings for Hydra.
 
 This guide will:
@@ -309,7 +309,7 @@ If your browser does not open automatically, navigate to:
 open the link, as prompted, in your browser, and follow the steps shown there. You might encounter a screen like the following
 one:
 
-![Insecure connection](/images/docs/hydra/insecure-connection.png)
+![Insecure connection](../../images/docs/hydra/insecure-connection.png)
 
 This happens because we run ORY Hydra with a self-signed TLS certificate. In production deployments, you would probably
 use a certificate signed by a trusted CA and not see this screen.
@@ -319,4 +319,4 @@ but it's always possible to proceed.
 
 When completed, you should land at a screen that looks like this one:
 
-![OAuth 2.0 result](/images/docs/hydra/install-result.png)
+![OAuth 2.0 result](../../images/docs/hydra/install-result.png)

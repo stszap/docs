@@ -64,7 +64,7 @@ measures to protect your privacy:
 2. We filter out any query parameters, headers, response and request bodies and path parameters. A full list of transmitted
 URL paths is listed in section [Request telemetry](#request-telemetry).
 4. **We are unable to see or store the IP address of your host**, as the
-[IP is set to `0.0.0.0`](https://github.com/ory/hydra/tree/master/metrics/middleware.go) when transmitting data to our metrics aggregator.
+[IP is set to `0.0.0.0`](https://github.com/ory/x/blob/master/metricsx/middleware.go) when transmitting data to our metrics aggregator.
 5. We do not transmit any environment information from the host, except:
   * Operating system id (windows, linux, osx)
   * The target architecture (amd64, darwin, ...)

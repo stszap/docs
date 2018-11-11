@@ -39,6 +39,7 @@
         "label": "SDK",
         "ids": [
           "hydra/sdk/index",
+          "hydra/sdk/api",
           "hydra/sdk/go",
           "hydra/sdk/js"
         ]
@@ -65,6 +66,13 @@
           "oathkeeper/configure-deploy",
           "oathkeeper/control-flow"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDK",
+        "ids": [
+          "oathkeeper/sdk/api"
+        ]
       }
     ],
     "ORY Keto": [
@@ -87,6 +95,13 @@
           "keto/engines/rbac",
           "keto/engines/acp-ory",
           "keto/engines/acp-aws"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "SDK",
+        "ids": [
+          "keto/sdk/api"
         ]
       }
     ],
