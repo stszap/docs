@@ -24,7 +24,7 @@ fs.readFile(file, (err, b) => {
     .replace(/\n\s*\n/g, '\n\n', -1)
     .replace(/^-(\s.*)\n/gim, '-$1',-1)
     .replace(/\n\n---/gi, '\n---\n\n')
-    .replace(/\n\s*\n```/gi, '\n```')
+    // .replace(/\n\s*\n```/gi, '\n```')
     // .replace(/^<h3 id="[0-9a-zA-Z0-9\-_.]+-responses">Responses<\/h3>$/gim, '#### Summary',-1)
     // .replace(/^> Example responses/gim, '### Responses',-1)
     // .replace(/^> Body parameter/gim, '### Request body',-1)

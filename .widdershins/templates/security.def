@@ -8,7 +8,8 @@
   - Flow: {{=f}}{{? flow.authorizationUrl}}
   - OAuth 2.0 Authorization URL = [{{=flow.authorizationUrl}}]({{=flow.authorizationUrl}}){{?}}{{? flow.tokenUrl}}
   - OAuth 2.0 Token URL = [{{=flow.tokenUrl}}]({{=flow.tokenUrl}}){{?}}{{? flow.scopes}}
-|Scope|Scope Description|
-|---|---|
-{{ for (var sc in flow.scopes) { }}|{{=sc}}|{{=data.utils.join(flow.scopes[sc])}}|
-{{ } /* of scopes */ }}{{?}}{{ } /* of flows */ }}{{?}}{{ } /* of securitySchemes */ }}
+  - OAuth 2.0 Scope
+    |Scope|Scope Description|
+    |---|---|
+    {{ for (var sc in flow.scopes) { }}|{{=sc}}|{{=data.utils.join(flow.scopes[sc])}}|
+    {{ } /* of scopes */ }}{{?}}{{ } /* of flows */ }}{{?}}{{ } /* of securitySchemes */ }}

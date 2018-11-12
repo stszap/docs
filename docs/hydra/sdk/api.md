@@ -21,10 +21,11 @@ share them in a [GitHub issue](https://github.com/ory/docs/issues/new) any time.
 - HTTP Authentication, scheme: basic - OAuth 2.0 Authorization.   - Flow: authorizationCode
   - OAuth 2.0 Authorization URL = [/oauth2/auth](/oauth2/auth)
   - OAuth 2.0 Token URL = [/oauth2/token](/oauth2/token)
-|Scope|Scope Description|
-|---|---|
-|offline|A scope required when requesting refresh tokens|
-|openid|Request an OpenID Connect ID Token|
+  - OAuth 2.0 Scope
+    |Scope|Scope Description|
+    |---|---|
+    |offline|A scope required when requesting refresh tokens|
+    |openid|Request an OpenID Connect ID Token|
 
 <a id="ory-hydra-public-endpoints"></a>
 ## Public Endpoints
@@ -32,9 +33,11 @@ share them in a [GitHub issue](https://github.com/ory/docs/issues/new) any time.
 <a id="opIdwellKnown"></a>
 
 ### JSON Web Keys Discovery
+
 ```
 GET /.well-known/jwks.json HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns JSON Web Keys to be used as public keys for verifying OpenID Connect ID Tokens and,
@@ -54,6 +57,7 @@ if enabled, OAuth 2.0 JWT Access Tokens. This endpoint can be used with client l
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -101,6 +105,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-wellKnown-shell">
+
 ```shell
 curl -X GET /.well-known/jwks.json \
   -H 'Accept: application/json'
@@ -108,6 +113,7 @@ curl -X GET /.well-known/jwks.json \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-wellKnown-go">
+
 ```go
 package main
 
@@ -135,6 +141,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-wellKnown-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -154,6 +161,7 @@ fetch('/.well-known/jwks.json', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-wellKnown-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/.well-known/jwks.json");
@@ -179,6 +187,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-wellKnown-python">
+
 ```python
 import requests
 
@@ -196,6 +205,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-wellKnown-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -217,9 +227,11 @@ p JSON.parse(result)
 <a id="opIddiscoverOpenIDConfiguration"></a>
 
 ### OpenID Connect Discovery
+
 ```
 GET /.well-known/openid-configuration HTTP/1.1
 Accept: application/json
+
 ```
 
 The well known endpoint an be used to retrieve information for OpenID Connect clients. We encourage you to not roll
@@ -240,6 +252,7 @@ flow at https://openid.net/specs/openid-connect-discovery-1_0.html
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "authorization_endpoint": "https://playground.ory.sh/ory-hydra/public/oauth2/auth",
@@ -299,6 +312,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-discoverOpenIDConfiguration-shell">
+
 ```shell
 curl -X GET /.well-known/openid-configuration \
   -H 'Accept: application/json'
@@ -306,6 +320,7 @@ curl -X GET /.well-known/openid-configuration \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-discoverOpenIDConfiguration-go">
+
 ```go
 package main
 
@@ -333,6 +348,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-discoverOpenIDConfiguration-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -352,6 +368,7 @@ fetch('/.well-known/openid-configuration', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-discoverOpenIDConfiguration-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/.well-known/openid-configuration");
@@ -377,6 +394,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-discoverOpenIDConfiguration-python">
+
 ```python
 import requests
 
@@ -394,6 +412,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-discoverOpenIDConfiguration-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -415,9 +434,11 @@ p JSON.parse(result)
 <a id="opIdoauthAuth"></a>
 
 ### The OAuth 2.0 authorize endpoint
+
 ```
 GET /oauth2/auth HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint is not documented here because you should never use your own implementation to perform OAuth2 flows.
@@ -440,6 +461,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -468,6 +490,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-oauthAuth-shell">
+
 ```shell
 curl -X GET /oauth2/auth \
   -H 'Accept: application/json'
@@ -475,6 +498,7 @@ curl -X GET /oauth2/auth \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthAuth-go">
+
 ```go
 package main
 
@@ -502,6 +526,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthAuth-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -521,6 +546,7 @@ fetch('/oauth2/auth', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthAuth-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth");
@@ -546,6 +572,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthAuth-python">
+
 ```python
 import requests
 
@@ -563,6 +590,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthAuth-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -584,10 +612,12 @@ p JSON.parse(result)
 <a id="opIdrevokeOAuth2Token"></a>
 
 ### Revoke OAuth2 tokens
+
 ```
 POST /oauth2/revoke HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
+
 ```
 
 Revoking a token (both access and refresh) means that the tokens will be invalid. A revoked access token can no
@@ -595,8 +625,10 @@ longer be used to make access requests, and a revoked refresh token can no longe
 Revoking a refresh token also invalidates the access token that was created with it.
 
 #### Request body
+
 ```yaml
 token: string
+
 ```
 
 <a id="revoke-oauth2-tokens-parameters"></a>
@@ -622,6 +654,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -651,6 +684,7 @@ basic, oauth2
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-revokeOAuth2Token-shell">
+
 ```shell
 curl -X POST /oauth2/revoke \
   -H 'Content-Type: application/x-www-form-urlencoded' \  -H 'Accept: application/json'
@@ -658,6 +692,7 @@ curl -X POST /oauth2/revoke \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeOAuth2Token-go">
+
 ```go
 package main
 
@@ -686,6 +721,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeOAuth2Token-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -708,6 +744,7 @@ fetch('/oauth2/revoke', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeOAuth2Token-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/revoke");
@@ -733,6 +770,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeOAuth2Token-python">
+
 ```python
 import requests
 
@@ -751,6 +789,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeOAuth2Token-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -773,9 +812,11 @@ p JSON.parse(result)
 <a id="opIdoauthToken"></a>
 
 ### The OAuth 2.0 token endpoint
+
 ```
 POST /oauth2/token HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint is not documented here because you should never use your own implementation to perform OAuth2 flows.
@@ -797,6 +838,7 @@ To learn more about this flow please refer to the specification: https://tools.i
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "access_token": "string",
@@ -828,6 +870,7 @@ basic, oauth2
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-oauthToken-shell">
+
 ```shell
 curl -X POST /oauth2/token \
   -H 'Accept: application/json'
@@ -835,6 +878,7 @@ curl -X POST /oauth2/token \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthToken-go">
+
 ```go
 package main
 
@@ -862,6 +906,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthToken-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -881,6 +926,7 @@ fetch('/oauth2/token', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthToken-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/token");
@@ -906,6 +952,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthToken-python">
+
 ```python
 import requests
 
@@ -923,6 +970,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-oauthToken-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -944,9 +992,11 @@ p JSON.parse(result)
 <a id="opIduserinfo"></a>
 
 ### OpenID Connect Userinfo
+
 ```
 GET /userinfo HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns the payload of the ID Token, including the idTokenExtra values, of the provided OAuth 2.0 access token.
@@ -966,6 +1016,7 @@ The endpoint implements http://openid.net/specs/openid-connect-core-1_0.html#Use
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "birthdate": "string",
@@ -1010,6 +1061,7 @@ oauth2
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-userinfo-shell">
+
 ```shell
 curl -X GET /userinfo \
   -H 'Accept: application/json' \  -H 'Authorization: Bearer {access-token}'
@@ -1017,6 +1069,7 @@ curl -X GET /userinfo \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-userinfo-go">
+
 ```go
 package main
 
@@ -1045,6 +1098,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-userinfo-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1064,6 +1118,7 @@ fetch('/userinfo', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-userinfo-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/userinfo");
@@ -1089,6 +1144,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-userinfo-python">
+
 ```python
 import requests
 
@@ -1107,6 +1163,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-userinfo-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1132,9 +1189,11 @@ p JSON.parse(result)
 <a id="opIdlistOAuth2Clients"></a>
 
 ### List OAuth 2.0 Clients
+
 ```
 GET /clients HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint lists all clients in the database, and never returns client secrets.
@@ -1216,6 +1275,7 @@ Status Code **200**
 ##### Examples
 
 ###### 200 response
+
 ```json
 [
   {
@@ -1304,6 +1364,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-listOAuth2Clients-shell">
+
 ```shell
 curl -X GET /clients \
   -H 'Accept: application/json'
@@ -1311,6 +1372,7 @@ curl -X GET /clients \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listOAuth2Clients-go">
+
 ```go
 package main
 
@@ -1338,6 +1400,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listOAuth2Clients-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1357,6 +1420,7 @@ fetch('/clients', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listOAuth2Clients-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/clients");
@@ -1382,6 +1446,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listOAuth2Clients-python">
+
 ```python
 import requests
 
@@ -1399,6 +1464,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listOAuth2Clients-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1420,10 +1486,12 @@ p JSON.parse(result)
 <a id="opIdcreateOAuth2Client"></a>
 
 ### Create an OAuth 2.0 client
+
 ```
 POST /clients HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Create a new OAuth 2.0 client If you pass `client_secret` the secret will be used, otherwise a random secret will be generated. The secret will be returned in the response and you will not be able to retrieve it later on. Write the secret down and keep it somwhere safe.
@@ -1431,6 +1499,7 @@ Create a new OAuth 2.0 client If you pass `client_secret` the secret will be use
 OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities. To manage ORY Hydra, you will need an OAuth 2.0 Client as well. Make sure that this endpoint is well protected and only callable by first-party components.
 
 #### Request body
+
 ```json
 {
   "allowed_cors_origins": [
@@ -1520,6 +1589,7 @@ OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usuall
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed_cors_origins": [
@@ -1606,6 +1676,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-createOAuth2Client-shell">
+
 ```shell
 curl -X POST /clients \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -1613,6 +1684,7 @@ curl -X POST /clients \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createOAuth2Client-go">
+
 ```go
 package main
 
@@ -1641,6 +1713,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createOAuth2Client-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -1724,6 +1797,7 @@ fetch('/clients', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createOAuth2Client-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/clients");
@@ -1749,6 +1823,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createOAuth2Client-python">
+
 ```python
 import requests
 
@@ -1767,6 +1842,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createOAuth2Client-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1789,9 +1865,11 @@ p JSON.parse(result)
 <a id="opIdgetOAuth2Client"></a>
 
 ### Get an OAuth 2.0 Client.
+
 ```
 GET /clients/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Get an OAUth 2.0 client by its ID. This endpoint never returns passwords.
@@ -1820,6 +1898,7 @@ OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usuall
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed_cors_origins": [
@@ -1906,6 +1985,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getOAuth2Client-shell">
+
 ```shell
 curl -X GET /clients/{id} \
   -H 'Accept: application/json'
@@ -1913,6 +1993,7 @@ curl -X GET /clients/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getOAuth2Client-go">
+
 ```go
 package main
 
@@ -1940,6 +2021,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getOAuth2Client-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1959,6 +2041,7 @@ fetch('/clients/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getOAuth2Client-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/clients/{id}");
@@ -1984,6 +2067,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getOAuth2Client-python">
+
 ```python
 import requests
 
@@ -2001,6 +2085,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getOAuth2Client-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2022,10 +2107,12 @@ p JSON.parse(result)
 <a id="opIdupdateOAuth2Client"></a>
 
 ### Update an OAuth 2.0 Client
+
 ```
 PUT /clients/{id} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Update an existing OAuth 2.0 Client. If you pass `client_secret` the secret will be updated and returned via the API. This is the only time you will be able to retrieve the client secret, so write it down and keep it safe.
@@ -2033,6 +2120,7 @@ Update an existing OAuth 2.0 Client. If you pass `client_secret` the secret will
 OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usually, OAuth 2.0 clients are generated for applications which want to consume your OAuth 2.0 or OpenID Connect capabilities. To manage ORY Hydra, you will need an OAuth 2.0 Client as well. Make sure that this endpoint is well protected and only callable by first-party components.
 
 #### Request body
+
 ```json
 {
   "allowed_cors_origins": [
@@ -2123,6 +2211,7 @@ OAuth 2.0 clients are used to perform OAuth 2.0 and OpenID Connect flows. Usuall
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed_cors_origins": [
@@ -2209,6 +2298,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-updateOAuth2Client-shell">
+
 ```shell
 curl -X PUT /clients/{id} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -2216,6 +2306,7 @@ curl -X PUT /clients/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateOAuth2Client-go">
+
 ```go
 package main
 
@@ -2244,6 +2335,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateOAuth2Client-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -2327,6 +2419,7 @@ fetch('/clients/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateOAuth2Client-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/clients/{id}");
@@ -2352,6 +2445,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateOAuth2Client-python">
+
 ```python
 import requests
 
@@ -2370,6 +2464,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateOAuth2Client-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2392,9 +2487,11 @@ p JSON.parse(result)
 <a id="opIddeleteOAuth2Client"></a>
 
 ### Deletes an OAuth 2.0 Client
+
 ```
 DELETE /clients/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Delete an existing OAuth 2.0 Client by its ID.
@@ -2424,6 +2521,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -2452,6 +2550,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deleteOAuth2Client-shell">
+
 ```shell
 curl -X DELETE /clients/{id} \
   -H 'Accept: application/json'
@@ -2459,6 +2558,7 @@ curl -X DELETE /clients/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteOAuth2Client-go">
+
 ```go
 package main
 
@@ -2486,6 +2586,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteOAuth2Client-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2505,6 +2606,7 @@ fetch('/clients/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteOAuth2Client-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/clients/{id}");
@@ -2530,6 +2632,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteOAuth2Client-python">
+
 ```python
 import requests
 
@@ -2547,6 +2650,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteOAuth2Client-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2568,9 +2672,11 @@ p JSON.parse(result)
 <a id="opIdgetJsonWebKeySet"></a>
 
 ### Retrieve a JSON Web Key Set
+
 ```
 GET /keys/{set} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint can be used to retrieve JWK Sets stored in ORY Hydra.
@@ -2599,6 +2705,7 @@ A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -2646,6 +2753,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getJsonWebKeySet-shell">
+
 ```shell
 curl -X GET /keys/{set} \
   -H 'Accept: application/json'
@@ -2653,6 +2761,7 @@ curl -X GET /keys/{set} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKeySet-go">
+
 ```go
 package main
 
@@ -2680,6 +2789,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKeySet-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2699,6 +2809,7 @@ fetch('/keys/{set}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKeySet-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}");
@@ -2724,6 +2835,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKeySet-python">
+
 ```python
 import requests
 
@@ -2741,6 +2853,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKeySet-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2762,10 +2875,12 @@ p JSON.parse(result)
 <a id="opIdupdateJsonWebKeySet"></a>
 
 ### Update a JSON Web Key Set
+
 ```
 PUT /keys/{set} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Use this method if you do not want to let Hydra generate the JWKs for you, but instead save your own.
@@ -2773,6 +2888,7 @@ Use this method if you do not want to let Hydra generate the JWKs for you, but i
 A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 
 #### Request body
+
 ```json
 {
   "keys": [
@@ -2824,6 +2940,7 @@ A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -2871,6 +2988,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-updateJsonWebKeySet-shell">
+
 ```shell
 curl -X PUT /keys/{set} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -2878,6 +2996,7 @@ curl -X PUT /keys/{set} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKeySet-go">
+
 ```go
 package main
 
@@ -2906,6 +3025,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKeySet-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -2950,6 +3070,7 @@ fetch('/keys/{set}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKeySet-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}");
@@ -2975,6 +3096,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKeySet-python">
+
 ```python
 import requests
 
@@ -2993,6 +3115,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKeySet-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3015,10 +3138,12 @@ p JSON.parse(result)
 <a id="opIdcreateJsonWebKeySet"></a>
 
 ### Generate a new JSON Web Key
+
 ```
 POST /keys/{set} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 This endpoint is capable of generating JSON Web Key Sets for you. There a different strategies available, such as symmetric cryptographic keys (HS256, HS512) and asymetric cryptographic keys (RS256, ECDSA). If the specified JSON Web Key Set does not exist, it will be created.
@@ -3026,6 +3151,7 @@ This endpoint is capable of generating JSON Web Key Sets for you. There a differ
 A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 
 #### Request body
+
 ```json
 {
   "alg": "string",
@@ -3057,6 +3183,7 @@ A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -3104,6 +3231,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-createJsonWebKeySet-shell">
+
 ```shell
 curl -X POST /keys/{set} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -3111,6 +3239,7 @@ curl -X POST /keys/{set} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createJsonWebKeySet-go">
+
 ```go
 package main
 
@@ -3139,6 +3268,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createJsonWebKeySet-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3163,6 +3293,7 @@ fetch('/keys/{set}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createJsonWebKeySet-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}");
@@ -3188,6 +3319,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createJsonWebKeySet-python">
+
 ```python
 import requests
 
@@ -3206,6 +3338,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createJsonWebKeySet-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3228,9 +3361,11 @@ p JSON.parse(result)
 <a id="opIddeleteJsonWebKeySet"></a>
 
 ### Delete a JSON Web Key Set
+
 ```
 DELETE /keys/{set} HTTP/1.1
 Accept: application/json
+
 ```
 
 Use this endpoint to delete a complete JSON Web Key Set and all the keys in that set.
@@ -3260,6 +3395,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -3288,6 +3424,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deleteJsonWebKeySet-shell">
+
 ```shell
 curl -X DELETE /keys/{set} \
   -H 'Accept: application/json'
@@ -3295,6 +3432,7 @@ curl -X DELETE /keys/{set} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKeySet-go">
+
 ```go
 package main
 
@@ -3322,6 +3460,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKeySet-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -3341,6 +3480,7 @@ fetch('/keys/{set}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKeySet-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}");
@@ -3366,6 +3506,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKeySet-python">
+
 ```python
 import requests
 
@@ -3383,6 +3524,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKeySet-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3404,9 +3546,11 @@ p JSON.parse(result)
 <a id="opIdgetJsonWebKey"></a>
 
 ### Fetch a JSON Web Key
+
 ```
 GET /keys/{set}/{kid} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a singular JSON Web Key, identified by the set and the specific key ID (kid).
@@ -3433,6 +3577,7 @@ This endpoint returns a singular JSON Web Key, identified by the set and the spe
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -3480,6 +3625,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getJsonWebKey-shell">
+
 ```shell
 curl -X GET /keys/{set}/{kid} \
   -H 'Accept: application/json'
@@ -3487,6 +3633,7 @@ curl -X GET /keys/{set}/{kid} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKey-go">
+
 ```go
 package main
 
@@ -3514,6 +3661,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKey-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -3533,6 +3681,7 @@ fetch('/keys/{set}/{kid}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKey-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}/{kid}");
@@ -3558,6 +3707,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKey-python">
+
 ```python
 import requests
 
@@ -3575,6 +3725,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getJsonWebKey-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3596,10 +3747,12 @@ p JSON.parse(result)
 <a id="opIdupdateJsonWebKey"></a>
 
 ### Update a JSON Web Key
+
 ```
 PUT /keys/{set}/{kid} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Use this method if you do not want to let Hydra generate the JWKs for you, but instead save your own.
@@ -3607,6 +3760,7 @@ Use this method if you do not want to let Hydra generate the JWKs for you, but i
 A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that represents a cryptographic key. A JWK Set is a JSON data structure that represents a set of JWKs. A JSON Web Key is identified by its set and key id. ORY Hydra uses this functionality to store cryptographic keys used for TLS and JSON Web Tokens (such as OpenID Connect ID tokens), and allows storing user-defined keys as well.
 
 #### Request body
+
 ```json
 {
   "alg": "RS256",
@@ -3655,6 +3809,7 @@ A JSON Web Key (JWK) is a JavaScript Object Notation (JSON) data structure that 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "alg": "RS256",
@@ -3698,6 +3853,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-updateJsonWebKey-shell">
+
 ```shell
 curl -X PUT /keys/{set}/{kid} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -3705,6 +3861,7 @@ curl -X PUT /keys/{set}/{kid} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKey-go">
+
 ```go
 package main
 
@@ -3733,6 +3890,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKey-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3773,6 +3931,7 @@ fetch('/keys/{set}/{kid}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKey-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}/{kid}");
@@ -3798,6 +3957,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKey-python">
+
 ```python
 import requests
 
@@ -3816,6 +3976,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateJsonWebKey-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3838,9 +3999,11 @@ p JSON.parse(result)
 <a id="opIddeleteJsonWebKey"></a>
 
 ### Delete a JSON Web Key
+
 ```
 DELETE /keys/{set}/{kid} HTTP/1.1
 Accept: application/json
+
 ```
 
 Use this endpoint to delete a single JSON Web Key.
@@ -3871,6 +4034,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -3899,6 +4063,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deleteJsonWebKey-shell">
+
 ```shell
 curl -X DELETE /keys/{set}/{kid} \
   -H 'Accept: application/json'
@@ -3906,6 +4071,7 @@ curl -X DELETE /keys/{set}/{kid} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKey-go">
+
 ```go
 package main
 
@@ -3933,6 +4099,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKey-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -3952,6 +4119,7 @@ fetch('/keys/{set}/{kid}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKey-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/keys/{set}/{kid}");
@@ -3977,6 +4145,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKey-python">
+
 ```python
 import requests
 
@@ -3994,6 +4163,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteJsonWebKey-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -4015,9 +4185,11 @@ p JSON.parse(result)
 <a id="opIdgetConsentRequest"></a>
 
 ### Get consent request information
+
 ```
 GET /oauth2/auth/requests/consent/{challenge} HTTP/1.1
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -4053,6 +4225,7 @@ or rejected the request.
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "acr": "string",
@@ -4168,6 +4341,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getConsentRequest-shell">
+
 ```shell
 curl -X GET /oauth2/auth/requests/consent/{challenge} \
   -H 'Accept: application/json'
@@ -4175,6 +4349,7 @@ curl -X GET /oauth2/auth/requests/consent/{challenge} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getConsentRequest-go">
+
 ```go
 package main
 
@@ -4202,6 +4377,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getConsentRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -4221,6 +4397,7 @@ fetch('/oauth2/auth/requests/consent/{challenge}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getConsentRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/consent/{challenge}");
@@ -4246,6 +4423,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getConsentRequest-python">
+
 ```python
 import requests
 
@@ -4263,6 +4441,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getConsentRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -4284,10 +4463,12 @@ p JSON.parse(result)
 <a id="opIdacceptConsentRequest"></a>
 
 ### Accept an consent request
+
 ```
 PUT /oauth2/auth/requests/consent/{challenge}/accept HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -4308,6 +4489,7 @@ consent request should be used as basis for future requests.
 The response contains a redirect URL which the consent provider should redirect the user-agent to.
 
 #### Request body
+
 ```json
 {
   "grant_access_token_audience": [
@@ -4353,6 +4535,7 @@ The response contains a redirect URL which the consent provider should redirect 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "redirect_to": "string"
@@ -4378,6 +4561,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-acceptConsentRequest-shell">
+
 ```shell
 curl -X PUT /oauth2/auth/requests/consent/{challenge}/accept \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -4385,6 +4569,7 @@ curl -X PUT /oauth2/auth/requests/consent/{challenge}/accept \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptConsentRequest-go">
+
 ```go
 package main
 
@@ -4413,6 +4598,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptConsentRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -4452,6 +4638,7 @@ fetch('/oauth2/auth/requests/consent/{challenge}/accept', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptConsentRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/consent/{challenge}/accept");
@@ -4477,6 +4664,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptConsentRequest-python">
+
 ```python
 import requests
 
@@ -4495,6 +4683,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptConsentRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -4517,10 +4706,12 @@ p JSON.parse(result)
 <a id="opIdrejectConsentRequest"></a>
 
 ### Reject an consent request
+
 ```
 PUT /oauth2/auth/requests/consent/{challenge}/reject HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -4540,6 +4731,7 @@ The consent provider must include a reason why the consent was not granted.
 The response contains a redirect URL which the consent provider should redirect the user-agent to.
 
 #### Request body
+
 ```json
 {
   "error": "string",
@@ -4572,6 +4764,7 @@ The response contains a redirect URL which the consent provider should redirect 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "redirect_to": "string"
@@ -4597,6 +4790,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-rejectConsentRequest-shell">
+
 ```shell
 curl -X PUT /oauth2/auth/requests/consent/{challenge}/reject \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -4604,6 +4798,7 @@ curl -X PUT /oauth2/auth/requests/consent/{challenge}/reject \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectConsentRequest-go">
+
 ```go
 package main
 
@@ -4632,6 +4827,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectConsentRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -4658,6 +4854,7 @@ fetch('/oauth2/auth/requests/consent/{challenge}/reject', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectConsentRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/consent/{challenge}/reject");
@@ -4683,6 +4880,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectConsentRequest-python">
+
 ```python
 import requests
 
@@ -4701,6 +4899,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectConsentRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -4723,9 +4922,11 @@ p JSON.parse(result)
 <a id="opIdgetLoginRequest"></a>
 
 ### Get an login request
+
 ```
 GET /oauth2/auth/requests/login/{challenge} HTTP/1.1
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -4758,6 +4959,7 @@ provider uses that challenge to fetch information on the OAuth2 request and then
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "challenge": "string",
@@ -4871,6 +5073,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getLoginRequest-shell">
+
 ```shell
 curl -X GET /oauth2/auth/requests/login/{challenge} \
   -H 'Accept: application/json'
@@ -4878,6 +5081,7 @@ curl -X GET /oauth2/auth/requests/login/{challenge} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getLoginRequest-go">
+
 ```go
 package main
 
@@ -4905,6 +5109,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getLoginRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -4924,6 +5129,7 @@ fetch('/oauth2/auth/requests/login/{challenge}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getLoginRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/login/{challenge}");
@@ -4949,6 +5155,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getLoginRequest-python">
+
 ```python
 import requests
 
@@ -4966,6 +5173,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getLoginRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -4987,10 +5195,12 @@ p JSON.parse(result)
 <a id="opIdacceptLoginRequest"></a>
 
 ### Accept an login request
+
 ```
 PUT /oauth2/auth/requests/login/{challenge}/accept HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -5008,6 +5218,7 @@ a cookie.
 The response contains a redirect URL which the login provider should redirect the user-agent to.
 
 #### Request body
+
 ```json
 {
   "acr": "string",
@@ -5040,6 +5251,7 @@ The response contains a redirect URL which the login provider should redirect th
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "redirect_to": "string"
@@ -5065,6 +5277,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-acceptLoginRequest-shell">
+
 ```shell
 curl -X PUT /oauth2/auth/requests/login/{challenge}/accept \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -5072,6 +5285,7 @@ curl -X PUT /oauth2/auth/requests/login/{challenge}/accept \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptLoginRequest-go">
+
 ```go
 package main
 
@@ -5100,6 +5314,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptLoginRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -5126,6 +5341,7 @@ fetch('/oauth2/auth/requests/login/{challenge}/accept', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptLoginRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/login/{challenge}/accept");
@@ -5151,6 +5367,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptLoginRequest-python">
+
 ```python
 import requests
 
@@ -5169,6 +5386,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-acceptLoginRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -5191,10 +5409,12 @@ p JSON.parse(result)
 <a id="opIdrejectLoginRequest"></a>
 
 ### Reject a login request
+
 ```
 PUT /oauth2/auth/requests/login/{challenge}/reject HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 When an authorization code, hybrid, or implicit OAuth 2.0 Flow is initiated, ORY Hydra asks the login provider
@@ -5211,6 +5431,7 @@ was be denied.
 The response contains a redirect URL which the login provider should redirect the user-agent to.
 
 #### Request body
+
 ```json
 {
   "error": "string",
@@ -5243,6 +5464,7 @@ The response contains a redirect URL which the login provider should redirect th
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "redirect_to": "string"
@@ -5268,6 +5490,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-rejectLoginRequest-shell">
+
 ```shell
 curl -X PUT /oauth2/auth/requests/login/{challenge}/reject \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -5275,6 +5498,7 @@ curl -X PUT /oauth2/auth/requests/login/{challenge}/reject \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectLoginRequest-go">
+
 ```go
 package main
 
@@ -5303,6 +5527,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectLoginRequest-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -5329,6 +5554,7 @@ fetch('/oauth2/auth/requests/login/{challenge}/reject', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectLoginRequest-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/requests/login/{challenge}/reject");
@@ -5354,6 +5580,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectLoginRequest-python">
+
 ```python
 import requests
 
@@ -5372,6 +5599,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-rejectLoginRequest-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -5394,9 +5622,11 @@ p JSON.parse(result)
 <a id="opIdlistUserConsentSessions"></a>
 
 ### Lists all consent sessions of a user
+
 ```
 GET /oauth2/auth/sessions/consent/{user} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint lists all user's granted consent sessions, including client and granted scope
@@ -5501,6 +5731,7 @@ Status Code **200**
 ##### Examples
 
 ###### 200 response
+
 ```json
 [
   {
@@ -5638,6 +5869,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-listUserConsentSessions-shell">
+
 ```shell
 curl -X GET /oauth2/auth/sessions/consent/{user} \
   -H 'Accept: application/json'
@@ -5645,6 +5877,7 @@ curl -X GET /oauth2/auth/sessions/consent/{user} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listUserConsentSessions-go">
+
 ```go
 package main
 
@@ -5672,6 +5905,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listUserConsentSessions-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -5691,6 +5925,7 @@ fetch('/oauth2/auth/sessions/consent/{user}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listUserConsentSessions-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/sessions/consent/{user}");
@@ -5716,6 +5951,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listUserConsentSessions-python">
+
 ```python
 import requests
 
@@ -5733,6 +5969,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listUserConsentSessions-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -5754,9 +5991,11 @@ p JSON.parse(result)
 <a id="opIdrevokeAllUserConsentSessions"></a>
 
 ### Revokes all previous consent sessions of a user
+
 ```
 DELETE /oauth2/auth/sessions/consent/{user} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint revokes a user's granted consent sessions and invalidates all associated OAuth 2.0 Access Tokens.
@@ -5783,6 +6022,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 404 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -5811,6 +6051,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-revokeAllUserConsentSessions-shell">
+
 ```shell
 curl -X DELETE /oauth2/auth/sessions/consent/{user} \
   -H 'Accept: application/json'
@@ -5818,6 +6059,7 @@ curl -X DELETE /oauth2/auth/sessions/consent/{user} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAllUserConsentSessions-go">
+
 ```go
 package main
 
@@ -5845,6 +6087,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAllUserConsentSessions-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -5864,6 +6107,7 @@ fetch('/oauth2/auth/sessions/consent/{user}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAllUserConsentSessions-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/sessions/consent/{user}");
@@ -5889,6 +6133,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAllUserConsentSessions-python">
+
 ```python
 import requests
 
@@ -5906,6 +6151,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAllUserConsentSessions-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -5927,9 +6173,11 @@ p JSON.parse(result)
 <a id="opIdrevokeUserClientConsentSessions"></a>
 
 ### Revokes consent sessions of a user for a specific OAuth 2.0 Client
+
 ```
 DELETE /oauth2/auth/sessions/consent/{user}/{client} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint revokes a user's granted consent sessions for a specific OAuth 2.0 Client and invalidates all
@@ -5958,6 +6206,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 404 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -5986,6 +6235,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-revokeUserClientConsentSessions-shell">
+
 ```shell
 curl -X DELETE /oauth2/auth/sessions/consent/{user}/{client} \
   -H 'Accept: application/json'
@@ -5993,6 +6243,7 @@ curl -X DELETE /oauth2/auth/sessions/consent/{user}/{client} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserClientConsentSessions-go">
+
 ```go
 package main
 
@@ -6020,6 +6271,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserClientConsentSessions-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -6039,6 +6291,7 @@ fetch('/oauth2/auth/sessions/consent/{user}/{client}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserClientConsentSessions-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/sessions/consent/{user}/{client}");
@@ -6064,6 +6317,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserClientConsentSessions-python">
+
 ```python
 import requests
 
@@ -6081,6 +6335,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserClientConsentSessions-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -6102,9 +6357,11 @@ p JSON.parse(result)
 <a id="opIdrevokeUserLoginCookie"></a>
 
 ### Logs user out by deleting the session cookie
+
 ```
 GET /oauth2/auth/sessions/login/revoke HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint deletes ths user's login session cookie and redirects the browser to the url
@@ -6126,6 +6383,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 404 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -6154,6 +6412,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-revokeUserLoginCookie-shell">
+
 ```shell
 curl -X GET /oauth2/auth/sessions/login/revoke \
   -H 'Accept: application/json'
@@ -6161,6 +6420,7 @@ curl -X GET /oauth2/auth/sessions/login/revoke \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserLoginCookie-go">
+
 ```go
 package main
 
@@ -6188,6 +6448,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserLoginCookie-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -6207,6 +6468,7 @@ fetch('/oauth2/auth/sessions/login/revoke', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserLoginCookie-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/sessions/login/revoke");
@@ -6232,6 +6494,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserLoginCookie-python">
+
 ```python
 import requests
 
@@ -6249,6 +6512,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeUserLoginCookie-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -6270,9 +6534,11 @@ p JSON.parse(result)
 <a id="opIdrevokeAuthenticationSession"></a>
 
 ### Invalidates a user's authentication session
+
 ```
 DELETE /oauth2/auth/sessions/login/{user} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint invalidates a user's authentication session. After revoking the authentication session, the user
@@ -6300,6 +6566,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 404 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -6328,6 +6595,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-revokeAuthenticationSession-shell">
+
 ```shell
 curl -X DELETE /oauth2/auth/sessions/login/{user} \
   -H 'Accept: application/json'
@@ -6335,6 +6603,7 @@ curl -X DELETE /oauth2/auth/sessions/login/{user} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAuthenticationSession-go">
+
 ```go
 package main
 
@@ -6362,6 +6631,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAuthenticationSession-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -6381,6 +6651,7 @@ fetch('/oauth2/auth/sessions/login/{user}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAuthenticationSession-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/auth/sessions/login/{user}");
@@ -6406,6 +6677,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAuthenticationSession-python">
+
 ```python
 import requests
 
@@ -6423,6 +6695,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-revokeAuthenticationSession-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -6444,10 +6717,12 @@ p JSON.parse(result)
 <a id="opIdflushInactiveOAuth2Tokens"></a>
 
 ### Flush Expired OAuth2 Access Tokens
+
 ```
 POST /oauth2/flush HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 This endpoint flushes expired OAuth2 access tokens from the database. You can set a time after which no tokens will be
@@ -6455,9 +6730,10 @@ not be touched, in case you want to keep recent tokens for auditing. Refresh tok
 automatically when performing the refresh flow.
 
 #### Request body
+
 ```json
 {
-  "notAfter": "2018-11-11T14:05:08Z"
+  "notAfter": "2018-11-12T10:44:11Z"
 }
 ```
 
@@ -6483,6 +6759,7 @@ typically 201.|None|
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -6511,6 +6788,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-flushInactiveOAuth2Tokens-shell">
+
 ```shell
 curl -X POST /oauth2/flush \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -6518,6 +6796,7 @@ curl -X POST /oauth2/flush \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-flushInactiveOAuth2Tokens-go">
+
 ```go
 package main
 
@@ -6546,10 +6825,11 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-flushInactiveOAuth2Tokens-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
-  "notAfter": "2018-11-11T14:05:08Z"
+  "notAfter": "2018-11-12T10:44:11Z"
 }';
 const headers = {
   'Content-Type': 'application/json',  'Accept': 'application/json'
@@ -6568,6 +6848,7 @@ fetch('/oauth2/flush', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-flushInactiveOAuth2Tokens-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/flush");
@@ -6593,6 +6874,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-flushInactiveOAuth2Tokens-python">
+
 ```python
 import requests
 
@@ -6611,6 +6893,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-flushInactiveOAuth2Tokens-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -6633,10 +6916,12 @@ p JSON.parse(result)
 <a id="opIdintrospectOAuth2Token"></a>
 
 ### Introspect OAuth2 tokens
+
 ```
 POST /oauth2/introspect HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
+
 ```
 
 The introspection endpoint allows to check if a token (both refresh and access) is active or not. An active token
@@ -6644,9 +6929,11 @@ is neither expired nor revoked. If a token is active, additional information on 
 set additional data for a token by setting `accessTokenExtra` during the consent flow.
 
 #### Request body
+
 ```yaml
 token: string
 scope: string
+
 ```
 
 <a id="introspect-oauth2-tokens-parameters"></a>
@@ -6682,6 +6969,7 @@ scopes, the result of active will be false.
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "active": true,
@@ -6725,6 +7013,7 @@ basic, oauth2
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-introspectOAuth2Token-shell">
+
 ```shell
 curl -X POST /oauth2/introspect \
   -H 'Content-Type: application/x-www-form-urlencoded' \  -H 'Accept: application/json'
@@ -6732,6 +7021,7 @@ curl -X POST /oauth2/introspect \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-introspectOAuth2Token-go">
+
 ```go
 package main
 
@@ -6760,6 +7050,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-introspectOAuth2Token-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -6783,6 +7074,7 @@ fetch('/oauth2/introspect', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-introspectOAuth2Token-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/oauth2/introspect");
@@ -6808,6 +7100,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-introspectOAuth2Token-python">
+
 ```python
 import requests
 
@@ -6826,6 +7119,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-introspectOAuth2Token-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -6851,9 +7145,11 @@ p JSON.parse(result)
 <a id="opIdisInstanceAlive"></a>
 
 ### Check alive status
+
 ```
 GET /health/alive HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running.
@@ -6878,6 +7174,7 @@ refer to the cluster state, only to a single instance.
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -6903,6 +7200,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceAlive-shell">
+
 ```shell
 curl -X GET /health/alive \
   -H 'Accept: application/json'
@@ -6910,6 +7208,7 @@ curl -X GET /health/alive \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-go">
+
 ```go
 package main
 
@@ -6937,6 +7236,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -6956,6 +7256,7 @@ fetch('/health/alive', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/alive");
@@ -6981,6 +7282,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-python">
+
 ```python
 import requests
 
@@ -6998,6 +7300,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -7019,9 +7322,11 @@ p JSON.parse(result)
 <a id="opIdisInstanceReady"></a>
 
 ### Check readiness status
+
 ```
 GET /health/ready HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running and the environment dependencies (e.g.
@@ -7046,6 +7351,7 @@ refer to the cluster state, only to a single instance.
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -7071,6 +7377,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceReady-shell">
+
 ```shell
 curl -X GET /health/ready \
   -H 'Accept: application/json'
@@ -7078,6 +7385,7 @@ curl -X GET /health/ready \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-go">
+
 ```go
 package main
 
@@ -7105,6 +7413,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -7124,6 +7433,7 @@ fetch('/health/ready', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/ready");
@@ -7149,6 +7459,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-python">
+
 ```python
 import requests
 
@@ -7166,6 +7477,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -7190,9 +7502,11 @@ p JSON.parse(result)
 <a id="opIdgetVersion"></a>
 
 ### Get service version
+
 ```
 GET /version HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns the service version typically notated using semantic versioning.
@@ -7215,6 +7529,7 @@ refer to the cluster state, only to a single instance.
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "version": "string"
@@ -7240,6 +7555,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getVersion-shell">
+
 ```shell
 curl -X GET /version \
   -H 'Accept: application/json'
@@ -7247,6 +7563,7 @@ curl -X GET /version \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-go">
+
 ```go
 package main
 
@@ -7274,6 +7591,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -7293,6 +7611,7 @@ fetch('/version', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/version");
@@ -7318,6 +7637,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-python">
+
 ```python
 import requests
 
@@ -7335,6 +7655,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -7359,12 +7680,14 @@ p JSON.parse(result)
 #### AuthenticationSession
 
 <a id="schemaauthenticationsession"></a>
+
 ```json
 {
-  "AuthenticatedAt": "2018-11-11T14:05:08Z",
+  "AuthenticatedAt": "2018-11-12T10:44:11Z",
   "ID": "string",
   "Subject": "string"
 }
+
 ```
 
 #### Properties
@@ -7379,6 +7702,7 @@ p JSON.parse(result)
 #### JSONWebKey
 
 <a id="schemajsonwebkey"></a>
+
 ```json
 {
   "alg": "RS256",
@@ -7401,6 +7725,7 @@ p JSON.parse(result)
   ],
   "y": "x_FEzRu9m36HLN_tue659LNpXW6pCyStikYjKIWI5a0"
 }
+
 ```
 
 #### Properties
@@ -7429,6 +7754,7 @@ p JSON.parse(result)
 #### JSONWebKeySet
 
 <a id="schemajsonwebkeyset"></a>
+
 ```json
 {
   "keys": [
@@ -7455,6 +7781,7 @@ p JSON.parse(result)
     }
   ]
 }
+
 ```
 
 #### Properties
@@ -7467,6 +7794,7 @@ p JSON.parse(result)
 #### PreviousConsentSession
 
 <a id="schemapreviousconsentsession"></a>
+
 ```json
 {
   "consent_request": {
@@ -7581,6 +7909,7 @@ p JSON.parse(result)
     }
   }
 }
+
 ```
 
 *The response used to return handled consent requests
@@ -7601,6 +7930,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### acceptConsentRequest
 
 <a id="schemaacceptconsentrequest"></a>
+
 ```json
 {
   "grant_access_token_audience": [
@@ -7622,6 +7952,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
     }
   }
 }
+
 ```
 
 *The request payload used to accept a consent request.*
@@ -7640,6 +7971,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### acceptLoginRequest
 
 <a id="schemaacceptloginrequest"></a>
+
 ```json
 {
   "acr": "string",
@@ -7648,6 +7980,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
   "remember_for": 0,
   "subject": "string"
 }
+
 ```
 
 *The request payload used to accept a login request.*
@@ -7666,10 +7999,12 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### completedRequest
 
 <a id="schemacompletedrequest"></a>
+
 ```json
 {
   "redirect_to": "string"
 }
+
 ```
 
 *The response payload sent when accepting or rejecting a login or consent request.*
@@ -7684,6 +8019,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### consentRequest
 
 <a id="schemaconsentrequest"></a>
+
 ```json
 {
   "acr": "string",
@@ -7778,6 +8114,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
   "skip": true,
   "subject": "string"
 }
+
 ```
 
 *Contains information on an ongoing consent request.*
@@ -7802,6 +8139,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### consentRequestSession
 
 <a id="schemaconsentrequestsession"></a>
+
 ```json
 {
   "access_token": {
@@ -7813,6 +8151,7 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
     "property2": {}
   }
 }
+
 ```
 
 *Used to pass session data to a consent request.*
@@ -7830,8 +8169,10 @@ same as HandledAuthenticationRequest, just with consent_request exposed as json*
 #### emptyResponse
 
 <a id="schemaemptyresponse"></a>
+
 ```json
 {}
+
 ```
 
 *Empty responses are sent when, for example, resources are deleted. The HTTP status code for empty responses is
@@ -7845,10 +8186,12 @@ typically 201.*
 #### flushInactiveOAuth2TokensRequest
 
 <a id="schemaflushinactiveoauth2tokensrequest"></a>
+
 ```json
 {
-  "notAfter": "2018-11-11T14:05:08Z"
+  "notAfter": "2018-11-12T10:44:11Z"
 }
+
 ```
 
 #### Properties
@@ -7861,6 +8204,7 @@ typically 201.*
 #### genericError
 
 <a id="schemagenericerror"></a>
+
 ```json
 {
   "error": "The requested resource could not be found",
@@ -7868,6 +8212,7 @@ typically 201.*
   "error_debug": "The database adapter was unable to find the element",
   "error_hint": "Object with ID 12345 does not exist"
 }
+
 ```
 
 *Error response*
@@ -7885,6 +8230,7 @@ typically 201.*
 #### healthNotReadyStatus
 
 <a id="schemahealthnotreadystatus"></a>
+
 ```json
 {
   "errors": {
@@ -7892,6 +8238,7 @@ typically 201.*
     "property2": "string"
   }
 }
+
 ```
 
 #### Properties
@@ -7905,10 +8252,12 @@ typically 201.*
 #### healthStatus
 
 <a id="schemahealthstatus"></a>
+
 ```json
 {
   "status": "string"
 }
+
 ```
 
 #### Properties
@@ -7921,12 +8270,14 @@ typically 201.*
 #### jsonWebKeySetGeneratorRequest
 
 <a id="schemajsonwebkeysetgeneratorrequest"></a>
+
 ```json
 {
   "alg": "string",
   "kid": "string",
   "use": "string"
 }
+
 ```
 
 #### Properties
@@ -7941,6 +8292,7 @@ typically 201.*
 #### loginRequest
 
 <a id="schemaloginrequest"></a>
+
 ```json
 {
   "challenge": "string",
@@ -8033,6 +8385,7 @@ typically 201.*
   "skip": true,
   "subject": "string"
 }
+
 ```
 
 *Contains information on an ongoing login request.*
@@ -8055,6 +8408,7 @@ typically 201.*
 #### oAuth2Client
 
 <a id="schemaoauth2client"></a>
+
 ```json
 {
   "allowed_cors_origins": [
@@ -8120,6 +8474,7 @@ typically 201.*
   "tos_uri": "string",
   "userinfo_signed_response_alg": "string"
 }
+
 ```
 
 *Client represents an OAuth 2.0 Client.*
@@ -8157,6 +8512,7 @@ typically 201.*
 #### oAuth2TokenIntrospection
 
 <a id="schemaoauth2tokenintrospection"></a>
+
 ```json
 {
   "active": true,
@@ -8178,6 +8534,7 @@ typically 201.*
   "token_type": "string",
   "username": "string"
 }
+
 ```
 
 *Introspection contains an access token's session data as specified by IETF RFC 7662, see:*
@@ -8205,6 +8562,7 @@ typically 201.*
 #### oauthTokenResponse
 
 <a id="schemaoauthtokenresponse"></a>
+
 ```json
 {
   "access_token": "string",
@@ -8214,6 +8572,7 @@ typically 201.*
   "scope": 0,
   "token_type": "string"
 }
+
 ```
 
 *The token response*
@@ -8233,6 +8592,7 @@ typically 201.*
 #### openIDConnectContext
 
 <a id="schemaopenidconnectcontext"></a>
+
 ```json
 {
   "acr_values": [
@@ -8248,6 +8608,7 @@ typically 201.*
     "string"
   ]
 }
+
 ```
 
 *Contains optional information about the OpenID Connect request.*
@@ -8267,6 +8628,7 @@ typically 201.*
 #### rejectRequest
 
 <a id="schemarejectrequest"></a>
+
 ```json
 {
   "error": "string",
@@ -8275,6 +8637,7 @@ typically 201.*
   "error_hint": "string",
   "status_code": 0
 }
+
 ```
 
 *The request payload used to accept a login or consent request.*
@@ -8293,12 +8656,14 @@ typically 201.*
 #### swaggerFlushInactiveAccessTokens
 
 <a id="schemaswaggerflushinactiveaccesstokens"></a>
+
 ```json
 {
   "Body": {
-    "notAfter": "2018-11-11T14:05:08Z"
+    "notAfter": "2018-11-12T10:44:11Z"
   }
 }
+
 ```
 
 #### Properties
@@ -8311,11 +8676,13 @@ typically 201.*
 #### swaggerJsonWebKeyQuery
 
 <a id="schemaswaggerjsonwebkeyquery"></a>
+
 ```json
 {
   "kid": "string",
   "set": "string"
 }
+
 ```
 
 #### Properties
@@ -8329,6 +8696,7 @@ typically 201.*
 #### swaggerJwkCreateSet
 
 <a id="schemaswaggerjwkcreateset"></a>
+
 ```json
 {
   "Body": {
@@ -8338,6 +8706,7 @@ typically 201.*
   },
   "set": "string"
 }
+
 ```
 
 #### Properties
@@ -8351,10 +8720,12 @@ typically 201.*
 #### swaggerJwkSetQuery
 
 <a id="schemaswaggerjwksetquery"></a>
+
 ```json
 {
   "set": "string"
 }
+
 ```
 
 #### Properties
@@ -8367,6 +8738,7 @@ typically 201.*
 #### swaggerJwkUpdateSet
 
 <a id="schemaswaggerjwkupdateset"></a>
+
 ```json
 {
   "Body": {
@@ -8396,6 +8768,7 @@ typically 201.*
   },
   "set": "string"
 }
+
 ```
 
 #### Properties
@@ -8409,6 +8782,7 @@ typically 201.*
 #### swaggerJwkUpdateSetKey
 
 <a id="schemaswaggerjwkupdatesetkey"></a>
+
 ```json
 {
   "Body": {
@@ -8435,6 +8809,7 @@ typically 201.*
   "kid": "string",
   "set": "string"
 }
+
 ```
 
 #### Properties
@@ -8449,11 +8824,13 @@ typically 201.*
 #### swaggerOAuthIntrospectionRequest
 
 <a id="schemaswaggeroauthintrospectionrequest"></a>
+
 ```json
 {
   "scope": "string",
   "token": "string"
 }
+
 ```
 
 #### Properties
@@ -8467,10 +8844,12 @@ typically 201.*
 #### swaggerRevokeOAuth2TokenParameters
 
 <a id="schemaswaggerrevokeoauth2tokenparameters"></a>
+
 ```json
 {
   "token": "string"
 }
+
 ```
 
 #### Properties
@@ -8483,6 +8862,7 @@ typically 201.*
 #### userinfoResponse
 
 <a id="schemauserinforesponse"></a>
+
 ```json
 {
   "birthdate": "string",
@@ -8505,6 +8885,7 @@ typically 201.*
   "website": "string",
   "zoneinfo": "string"
 }
+
 ```
 
 *The userinfo response*
@@ -8537,10 +8918,12 @@ typically 201.*
 #### version
 
 <a id="schemaversion"></a>
+
 ```json
 {
   "version": "string"
 }
+
 ```
 
 #### Properties
@@ -8553,6 +8936,7 @@ typically 201.*
 #### wellKnown
 
 <a id="schemawellknown"></a>
+
 ```json
 {
   "authorization_endpoint": "https://playground.ory.sh/ory-hydra/public/oauth2/auth",
@@ -8591,6 +8975,7 @@ typically 201.*
     "string"
   ]
 }
+
 ```
 
 *WellKnown represents important OpenID Connect discovery metadata*

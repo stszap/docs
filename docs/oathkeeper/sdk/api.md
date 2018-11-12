@@ -22,9 +22,11 @@ share them in a [GitHub issue](https://github.com/ory/docs/issues/new) any time.
 <a id="opIdgetWellKnown"></a>
 
 ### Returns well known keys
+
 ```
 GET /.well-known/jwks.json HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns public keys for validating the ID tokens issued by ORY Oathkeeper.
@@ -70,6 +72,7 @@ Status Code **403**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "keys": [
@@ -117,6 +120,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getWellKnown-shell">
+
 ```shell
 curl -X GET /.well-known/jwks.json \
   -H 'Accept: application/json'
@@ -124,6 +128,7 @@ curl -X GET /.well-known/jwks.json \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getWellKnown-go">
+
 ```go
 package main
 
@@ -151,6 +156,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getWellKnown-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -170,6 +176,7 @@ fetch('/.well-known/jwks.json', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getWellKnown-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/.well-known/jwks.json");
@@ -195,6 +202,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getWellKnown-python">
+
 ```python
 import requests
 
@@ -212,6 +220,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getWellKnown-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -236,9 +245,11 @@ p JSON.parse(result)
 <a id="opIdisInstanceAlive"></a>
 
 ### Check the Alive Status
+
 ```
 GET /health/alive HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running.
@@ -275,6 +286,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -300,6 +312,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceAlive-shell">
+
 ```shell
 curl -X GET /health/alive \
   -H 'Accept: application/json'
@@ -307,6 +320,7 @@ curl -X GET /health/alive \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-go">
+
 ```go
 package main
 
@@ -334,6 +348,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -353,6 +368,7 @@ fetch('/health/alive', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/alive");
@@ -378,6 +394,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-python">
+
 ```python
 import requests
 
@@ -395,6 +412,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -416,9 +434,11 @@ p JSON.parse(result)
 <a id="opIdisInstanceReady"></a>
 
 ### Check the Readiness Status
+
 ```
 GET /health/ready HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running and the environment dependencies (e.g.
@@ -442,6 +462,7 @@ Be aware that if you are running multiple nodes of ORY Oathkeeper, the health st
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -467,6 +488,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceReady-shell">
+
 ```shell
 curl -X GET /health/ready \
   -H 'Accept: application/json'
@@ -474,6 +496,7 @@ curl -X GET /health/ready \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-go">
+
 ```go
 package main
 
@@ -501,6 +524,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -520,6 +544,7 @@ fetch('/health/ready', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/ready");
@@ -545,6 +570,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-python">
+
 ```python
 import requests
 
@@ -562,6 +588,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -586,9 +613,11 @@ p JSON.parse(result)
 <a id="opIdjudge"></a>
 
 ### Judge if a request should be allowed or not
+
 ```
 GET /judge HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint mirrors the proxy capability of ORY Oathkeeper's proxy functionality but instead of forwarding the
@@ -662,6 +691,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -697,6 +727,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-judge-shell">
+
 ```shell
 curl -X GET /judge \
   -H 'Accept: application/json'
@@ -704,6 +735,7 @@ curl -X GET /judge \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-judge-go">
+
 ```go
 package main
 
@@ -731,6 +763,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-judge-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -750,6 +783,7 @@ fetch('/judge', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-judge-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/judge");
@@ -775,6 +809,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-judge-python">
+
 ```python
 import requests
 
@@ -792,6 +827,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-judge-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -816,9 +852,11 @@ p JSON.parse(result)
 <a id="opIdlistRules"></a>
 
 ### List all rules
+
 ```
 GET /rules HTTP/1.1
 Accept: application/json
+
 ```
 
 This method returns an array of all rules that are stored in the backend. This is useful if you want to get a full
@@ -907,6 +945,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 [
   {
@@ -960,6 +999,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-listRules-shell">
+
 ```shell
 curl -X GET /rules \
   -H 'Accept: application/json'
@@ -967,6 +1007,7 @@ curl -X GET /rules \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRules-go">
+
 ```go
 package main
 
@@ -994,6 +1035,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRules-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1013,6 +1055,7 @@ fetch('/rules', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRules-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/rules");
@@ -1038,6 +1081,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRules-python">
+
 ```python
 import requests
 
@@ -1055,6 +1099,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRules-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1076,15 +1121,18 @@ p JSON.parse(result)
 <a id="opIdcreateRule"></a>
 
 ### Create a rule
+
 ```
 POST /rules HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 This method allows creation of rules. If a rule id exists, you will receive an error.
 
 #### Request body
+
 ```json
 {
   "authenticators": [
@@ -1178,6 +1226,7 @@ Status Code **500**
 ##### Examples
 
 ###### 201 response
+
 ```json
 {
   "authenticators": [
@@ -1229,6 +1278,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-createRule-shell">
+
 ```shell
 curl -X POST /rules \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -1236,6 +1286,7 @@ curl -X POST /rules \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRule-go">
+
 ```go
 package main
 
@@ -1264,6 +1315,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRule-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -1312,6 +1364,7 @@ fetch('/rules', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRule-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/rules");
@@ -1337,6 +1390,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRule-python">
+
 ```python
 import requests
 
@@ -1355,6 +1409,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRule-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1377,9 +1432,11 @@ p JSON.parse(result)
 <a id="opIdgetRule"></a>
 
 ### Retrieve a rule
+
 ```
 GET /rules/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Use this method to retrieve a rule from the storage. If it does not exist you will receive a 404 error.
@@ -1458,6 +1515,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "authenticators": [
@@ -1509,6 +1567,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getRule-shell">
+
 ```shell
 curl -X GET /rules/{id} \
   -H 'Accept: application/json'
@@ -1516,6 +1575,7 @@ curl -X GET /rules/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getRule-go">
+
 ```go
 package main
 
@@ -1543,6 +1603,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getRule-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1562,6 +1623,7 @@ fetch('/rules/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getRule-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/rules/{id}");
@@ -1587,6 +1649,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getRule-python">
+
 ```python
 import requests
 
@@ -1604,6 +1667,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getRule-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1625,16 +1689,19 @@ p JSON.parse(result)
 <a id="opIdupdateRule"></a>
 
 ### Update a rule
+
 ```
 PUT /rules/{id} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Use this method to update a rule. Keep in mind that you need to send the full rule payload as this endpoint does
 not support patching.
 
 #### Request body
+
 ```json
 {
   "authenticators": [
@@ -1742,6 +1809,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "authenticators": [
@@ -1793,6 +1861,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-updateRule-shell">
+
 ```shell
 curl -X PUT /rules/{id} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -1800,6 +1869,7 @@ curl -X PUT /rules/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateRule-go">
+
 ```go
 package main
 
@@ -1828,6 +1898,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateRule-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -1876,6 +1947,7 @@ fetch('/rules/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateRule-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/rules/{id}");
@@ -1901,6 +1973,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateRule-python">
+
 ```python
 import requests
 
@@ -1919,6 +1992,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updateRule-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1941,9 +2015,11 @@ p JSON.parse(result)
 <a id="opIddeleteRule"></a>
 
 ### Delete a rule
+
 ```
 DELETE /rules/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Use this endpoint to delete a rule.
@@ -2022,6 +2098,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -2057,6 +2134,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deleteRule-shell">
+
 ```shell
 curl -X DELETE /rules/{id} \
   -H 'Accept: application/json'
@@ -2064,6 +2142,7 @@ curl -X DELETE /rules/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRule-go">
+
 ```go
 package main
 
@@ -2091,6 +2170,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRule-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2110,6 +2190,7 @@ fetch('/rules/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRule-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/rules/{id}");
@@ -2135,6 +2216,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRule-python">
+
 ```python
 import requests
 
@@ -2152,6 +2234,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRule-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2176,9 +2259,11 @@ p JSON.parse(result)
 <a id="opIdgetVersion"></a>
 
 ### Get the version of Oathkeeper
+
 ```
 GET /version HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns the version as `{ "version": "VERSION" }`. The version is only correct with the prebuilt binary and not custom builds.
@@ -2195,6 +2280,7 @@ This endpoint returns the version as `{ "version": "VERSION" }`. The version is 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "version": "string"
@@ -2220,6 +2306,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getVersion-shell">
+
 ```shell
 curl -X GET /version \
   -H 'Accept: application/json'
@@ -2227,6 +2314,7 @@ curl -X GET /version \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-go">
+
 ```go
 package main
 
@@ -2254,6 +2342,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2273,6 +2362,7 @@ fetch('/version', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/version");
@@ -2298,6 +2388,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-python">
+
 ```python
 import requests
 
@@ -2315,6 +2406,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2339,12 +2431,14 @@ p JSON.parse(result)
 #### Upstream
 
 <a id="schemaupstream"></a>
+
 ```json
 {
   "preserve_host": true,
   "strip_path": "string",
   "url": "string"
 }
+
 ```
 
 #### Properties
@@ -2359,6 +2453,7 @@ p JSON.parse(result)
 #### healthNotReadyStatus
 
 <a id="schemahealthnotreadystatus"></a>
+
 ```json
 {
   "errors": {
@@ -2366,6 +2461,7 @@ p JSON.parse(result)
     "property2": "string"
   }
 }
+
 ```
 
 #### Properties
@@ -2379,10 +2475,12 @@ p JSON.parse(result)
 #### healthStatus
 
 <a id="schemahealthstatus"></a>
+
 ```json
 {
   "status": "string"
 }
+
 ```
 
 #### Properties
@@ -2395,6 +2493,7 @@ p JSON.parse(result)
 #### jsonWebKey
 
 <a id="schemajsonwebkey"></a>
+
 ```json
 {
   "alg": "string",
@@ -2417,6 +2516,7 @@ p JSON.parse(result)
   ],
   "y": "string"
 }
+
 ```
 
 #### Properties
@@ -2445,6 +2545,7 @@ p JSON.parse(result)
 #### jsonWebKeySet
 
 <a id="schemajsonwebkeyset"></a>
+
 ```json
 {
   "keys": [
@@ -2471,6 +2572,7 @@ p JSON.parse(result)
     }
   ]
 }
+
 ```
 
 #### Properties
@@ -2483,6 +2585,7 @@ p JSON.parse(result)
 #### rule
 
 <a id="schemarule"></a>
+
 ```json
 {
   "authenticators": [
@@ -2513,6 +2616,7 @@ p JSON.parse(result)
     "url": "string"
   }
 }
+
 ```
 
 *swaggerRule is a single rule that will get checked on every HTTP request.*
@@ -2533,11 +2637,13 @@ p JSON.parse(result)
 #### ruleHandler
 
 <a id="schemarulehandler"></a>
+
 ```json
 {
   "config": "string",
   "handler": "string"
 }
+
 ```
 
 #### Properties
@@ -2551,6 +2657,7 @@ p JSON.parse(result)
 #### ruleMatch
 
 <a id="schemarulematch"></a>
+
 ```json
 {
   "methods": [
@@ -2558,6 +2665,7 @@ p JSON.parse(result)
   ],
   "url": "string"
 }
+
 ```
 
 #### Properties
@@ -2571,6 +2679,7 @@ p JSON.parse(result)
 #### swaggerCreateRuleParameters
 
 <a id="schemaswaggercreateruleparameters"></a>
+
 ```json
 {
   "Body": {
@@ -2603,6 +2712,7 @@ p JSON.parse(result)
     }
   }
 }
+
 ```
 
 #### Properties
@@ -2615,10 +2725,12 @@ p JSON.parse(result)
 #### swaggerGetRuleParameters
 
 <a id="schemaswaggergetruleparameters"></a>
+
 ```json
 {
   "id": "string"
 }
+
 ```
 
 #### Properties
@@ -2631,11 +2743,13 @@ p JSON.parse(result)
 #### swaggerListRulesParameters
 
 <a id="schemaswaggerlistrulesparameters"></a>
+
 ```json
 {
   "limit": 0,
   "offset": 0
 }
+
 ```
 
 #### Properties
@@ -2649,6 +2763,7 @@ p JSON.parse(result)
 #### swaggerRuleResponse
 
 <a id="schemaswaggerruleresponse"></a>
+
 ```json
 {
   "Body": {
@@ -2681,6 +2796,7 @@ p JSON.parse(result)
     }
   }
 }
+
 ```
 
 *A rule*
@@ -2695,6 +2811,7 @@ p JSON.parse(result)
 #### swaggerRulesResponse
 
 <a id="schemaswaggerrulesresponse"></a>
+
 ```json
 {
   "Body": [
@@ -2729,6 +2846,7 @@ p JSON.parse(result)
     }
   ]
 }
+
 ```
 
 *A list of rules*
@@ -2743,6 +2861,7 @@ p JSON.parse(result)
 #### swaggerUpdateRuleParameters
 
 <a id="schemaswaggerupdateruleparameters"></a>
+
 ```json
 {
   "Body": {
@@ -2776,6 +2895,7 @@ p JSON.parse(result)
   },
   "id": "string"
 }
+
 ```
 
 #### Properties
@@ -2789,10 +2909,12 @@ p JSON.parse(result)
 #### version
 
 <a id="schemaversion"></a>
+
 ```json
 {
   "version": "string"
 }
+
 ```
 
 #### Properties

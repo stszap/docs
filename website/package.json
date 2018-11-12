@@ -25,5 +25,7 @@
     "walkdir": "0.0.12",
     "widdershins": "3.6.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.2.1"
+  }
 }

@@ -22,9 +22,11 @@ share them in a [GitHub issue](https://github.com/ory/docs/issues/new) any time.
 <a id="opIdisInstanceAlive"></a>
 
 ### Check the Alive Status
+
 ```
 GET /health/alive HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running.
@@ -61,6 +63,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -86,6 +89,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceAlive-shell">
+
 ```shell
 curl -X GET /health/alive \
   -H 'Accept: application/json'
@@ -93,6 +97,7 @@ curl -X GET /health/alive \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-go">
+
 ```go
 package main
 
@@ -120,6 +125,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -139,6 +145,7 @@ fetch('/health/alive', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/alive");
@@ -164,6 +171,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-python">
+
 ```python
 import requests
 
@@ -181,6 +189,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceAlive-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -202,9 +211,11 @@ p JSON.parse(result)
 <a id="opIdisInstanceReady"></a>
 
 ### Check the Readiness Status
+
 ```
 GET /health/ready HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns a 200 status code when the HTTP server is up running and the environment dependencies (e.g.
@@ -228,6 +239,7 @@ Be aware that if you are running multiple nodes of ORY Keto, the health status w
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "status": "string"
@@ -253,6 +265,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isInstanceReady-shell">
+
 ```shell
 curl -X GET /health/ready \
   -H 'Accept: application/json'
@@ -260,6 +273,7 @@ curl -X GET /health/ready \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-go">
+
 ```go
 package main
 
@@ -287,6 +301,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -306,6 +321,7 @@ fetch('/health/ready', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/health/ready");
@@ -331,6 +347,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-python">
+
 ```python
 import requests
 
@@ -348,6 +365,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isInstanceReady-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -372,9 +390,11 @@ p JSON.parse(result)
 <a id="opIdlistPolicies"></a>
 
 ### listPolicies
+
 ```
 GET /policies HTTP/1.1
 Accept: application/json
+
 ```
 
 List Access Control Policies
@@ -458,6 +478,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 [
   {
@@ -512,6 +533,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-listPolicies-shell">
+
 ```shell
 curl -X GET /policies \
   -H 'Accept: application/json'
@@ -519,6 +541,7 @@ curl -X GET /policies \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listPolicies-go">
+
 ```go
 package main
 
@@ -546,6 +569,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listPolicies-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -565,6 +589,7 @@ fetch('/policies', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listPolicies-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/policies");
@@ -590,6 +615,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listPolicies-python">
+
 ```python
 import requests
 
@@ -607,6 +633,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listPolicies-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -628,15 +655,18 @@ p JSON.parse(result)
 <a id="opIdcreatePolicy"></a>
 
 ### createPolicy
+
 ```
 POST /policies HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Create an Access Control Policy
 
 #### Request body
+
 ```json
 {
   "actions": [
@@ -731,6 +761,7 @@ Status Code **500**
 ##### Examples
 
 ###### 201 response
+
 ```json
 {
   "actions": [
@@ -783,6 +814,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-createPolicy-shell">
+
 ```shell
 curl -X POST /policies \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -790,6 +822,7 @@ curl -X POST /policies \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createPolicy-go">
+
 ```go
 package main
 
@@ -818,6 +851,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createPolicy-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -867,6 +901,7 @@ fetch('/policies', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createPolicy-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/policies");
@@ -892,6 +927,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createPolicy-python">
+
 ```python
 import requests
 
@@ -910,6 +946,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createPolicy-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -932,9 +969,11 @@ p JSON.parse(result)
 <a id="opIdgetPolicy"></a>
 
 ### getPolicy
+
 ```
 GET /policies/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Get an Access Control Policy
@@ -1000,6 +1039,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "actions": [
@@ -1052,6 +1092,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getPolicy-shell">
+
 ```shell
 curl -X GET /policies/{id} \
   -H 'Accept: application/json'
@@ -1059,6 +1100,7 @@ curl -X GET /policies/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getPolicy-go">
+
 ```go
 package main
 
@@ -1086,6 +1128,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getPolicy-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1105,6 +1148,7 @@ fetch('/policies/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getPolicy-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/policies/{id}");
@@ -1130,6 +1174,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getPolicy-python">
+
 ```python
 import requests
 
@@ -1147,6 +1192,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getPolicy-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1168,15 +1214,18 @@ p JSON.parse(result)
 <a id="opIdupdatePolicy"></a>
 
 ### updatePolicy
+
 ```
 PUT /policies/{id} HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Update an Access Control Policy
 
 #### Request body
+
 ```json
 {
   "actions": [
@@ -1272,6 +1321,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "actions": [
@@ -1324,6 +1374,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-updatePolicy-shell">
+
 ```shell
 curl -X PUT /policies/{id} \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -1331,6 +1382,7 @@ curl -X PUT /policies/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updatePolicy-go">
+
 ```go
 package main
 
@@ -1359,6 +1411,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updatePolicy-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -1408,6 +1461,7 @@ fetch('/policies/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updatePolicy-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/policies/{id}");
@@ -1433,6 +1487,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updatePolicy-python">
+
 ```python
 import requests
 
@@ -1451,6 +1506,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-updatePolicy-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1473,9 +1529,11 @@ p JSON.parse(result)
 <a id="opIddeletePolicy"></a>
 
 ### deletePolicy
+
 ```
 DELETE /policies/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 Delete an Access Control Policy
@@ -1541,6 +1599,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -1576,6 +1635,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deletePolicy-shell">
+
 ```shell
 curl -X DELETE /policies/{id} \
   -H 'Accept: application/json'
@@ -1583,6 +1643,7 @@ curl -X DELETE /policies/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deletePolicy-go">
+
 ```go
 package main
 
@@ -1610,6 +1671,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deletePolicy-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1629,6 +1691,7 @@ fetch('/policies/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deletePolicy-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/policies/{id}");
@@ -1654,6 +1717,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deletePolicy-python">
+
 ```python
 import requests
 
@@ -1671,6 +1735,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deletePolicy-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1695,9 +1760,11 @@ p JSON.parse(result)
 <a id="opIdlistRoles"></a>
 
 ### List all roles
+
 ```
 GET /roles HTTP/1.1
 Accept: application/json
+
 ```
 
 A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
@@ -1776,6 +1843,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 [
   {
@@ -1806,6 +1874,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-listRoles-shell">
+
 ```shell
 curl -X GET /roles \
   -H 'Accept: application/json'
@@ -1813,6 +1882,7 @@ curl -X GET /roles \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRoles-go">
+
 ```go
 package main
 
@@ -1840,6 +1910,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRoles-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -1859,6 +1930,7 @@ fetch('/roles', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRoles-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles");
@@ -1884,6 +1956,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRoles-python">
+
 ```python
 import requests
 
@@ -1901,6 +1974,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-listRoles-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -1922,10 +1996,12 @@ p JSON.parse(result)
 <a id="opIdcreateRole"></a>
 
 ### Create a role
+
 ```
 POST /roles HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
@@ -1934,6 +2010,7 @@ user or some other sort of role.
 This endpoint allows you to create a new role. You may define members as well but you don't have to.
 
 #### Request body
+
 ```json
 {
   "id": "string",
@@ -2004,6 +2081,7 @@ Status Code **500**
 ##### Examples
 
 ###### 201 response
+
 ```json
 {
   "id": "string",
@@ -2032,6 +2110,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-createRole-shell">
+
 ```shell
 curl -X POST /roles \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -2039,6 +2118,7 @@ curl -X POST /roles \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRole-go">
+
 ```go
 package main
 
@@ -2067,6 +2147,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRole-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -2092,6 +2173,7 @@ fetch('/roles', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRole-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles");
@@ -2117,6 +2199,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRole-python">
+
 ```python
 import requests
 
@@ -2135,6 +2218,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-createRole-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2157,9 +2241,11 @@ p JSON.parse(result)
 <a id="opIddeleteRole"></a>
 
 ### Get a role by its ID
+
 ```
 DELETE /roles/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
@@ -2228,6 +2314,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -2263,6 +2350,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-deleteRole-shell">
+
 ```shell
 curl -X DELETE /roles/{id} \
   -H 'Accept: application/json'
@@ -2270,6 +2358,7 @@ curl -X DELETE /roles/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRole-go">
+
 ```go
 package main
 
@@ -2297,6 +2386,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRole-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2316,6 +2406,7 @@ fetch('/roles/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRole-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles/{id}");
@@ -2341,6 +2432,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRole-python">
+
 ```python
 import requests
 
@@ -2358,6 +2450,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-deleteRole-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2380,9 +2473,11 @@ p JSON.parse(result)
 
 ### A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
 user or some other sort of role.
+
 ```
 PUT /roles/{id} HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint allows you to overwrite a role. You have to know the role's ID.
@@ -2443,6 +2538,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -2478,6 +2574,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-setRole-shell">
+
 ```shell
 curl -X PUT /roles/{id} \
   -H 'Accept: application/json'
@@ -2485,6 +2582,7 @@ curl -X PUT /roles/{id} \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-setRole-go">
+
 ```go
 package main
 
@@ -2512,6 +2610,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-setRole-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -2531,6 +2630,7 @@ fetch('/roles/{id}', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-setRole-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles/{id}");
@@ -2556,6 +2656,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-setRole-python">
+
 ```python
 import requests
 
@@ -2573,6 +2674,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-setRole-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2594,10 +2696,12 @@ p JSON.parse(result)
 <a id="opIdaddMembersToRole"></a>
 
 ### Add members to a role
+
 ```
 POST /roles/{id}/members HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
@@ -2606,6 +2710,7 @@ user or some other sort of role.
 This endpoint allows you to add members (users, applications, ...) to a specific role. You have to know the role's ID.
 
 #### Request body
+
 ```json
 {
   "members": [
@@ -2676,6 +2781,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -2711,6 +2817,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-addMembersToRole-shell">
+
 ```shell
 curl -X POST /roles/{id}/members \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -2718,6 +2825,7 @@ curl -X POST /roles/{id}/members \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-addMembersToRole-go">
+
 ```go
 package main
 
@@ -2746,6 +2854,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-addMembersToRole-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -2770,6 +2879,7 @@ fetch('/roles/{id}/members', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-addMembersToRole-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles/{id}/members");
@@ -2795,6 +2905,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-addMembersToRole-python">
+
 ```python
 import requests
 
@@ -2813,6 +2924,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-addMembersToRole-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -2835,10 +2947,12 @@ p JSON.parse(result)
 <a id="opIdremoveMembersFromRole"></a>
 
 ### Remove members from a role
+
 ```
 DELETE /roles/{id}/members HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 A Role represents a group of users that share the same role and thus permissions. A role could be an administrator, a moderator, a regular
@@ -2847,6 +2961,7 @@ user or some other sort of role.
 This endpoint allows you to remove members (users, applications, ...) from a specific role. You have to know the role's ID.
 
 #### Request body
+
 ```json
 {
   "members": [
@@ -2917,6 +3032,7 @@ Status Code **500**
 ##### Examples
 
 ###### 401 response
+
 ```json
 {
   "code": 0,
@@ -2952,6 +3068,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-removeMembersFromRole-shell">
+
 ```shell
 curl -X DELETE /roles/{id}/members \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -2959,6 +3076,7 @@ curl -X DELETE /roles/{id}/members \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-removeMembersFromRole-go">
+
 ```go
 package main
 
@@ -2987,6 +3105,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-removeMembersFromRole-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3011,6 +3130,7 @@ fetch('/roles/{id}/members', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-removeMembersFromRole-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/roles/{id}/members");
@@ -3036,6 +3156,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-removeMembersFromRole-python">
+
 ```python
 import requests
 
@@ -3054,6 +3175,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-removeMembersFromRole-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3079,9 +3201,11 @@ p JSON.parse(result)
 <a id="opIdgetVersion"></a>
 
 ### Get the version of Keto
+
 ```
 GET /version HTTP/1.1
 Accept: application/json
+
 ```
 
 This endpoint returns the version as `{ "version": "VERSION" }`. The version is only correct with the prebuilt binary and not custom builds.
@@ -3098,6 +3222,7 @@ This endpoint returns the version as `{ "version": "VERSION" }`. The version is 
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "version": "string"
@@ -3123,6 +3248,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-getVersion-shell">
+
 ```shell
 curl -X GET /version \
   -H 'Accept: application/json'
@@ -3130,6 +3256,7 @@ curl -X GET /version \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-go">
+
 ```go
 package main
 
@@ -3157,6 +3284,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 
@@ -3176,6 +3304,7 @@ fetch('/version', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/version");
@@ -3201,6 +3330,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-python">
+
 ```python
 import requests
 
@@ -3218,6 +3348,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-getVersion-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3242,10 +3373,12 @@ p JSON.parse(result)
 <a id="opIdisOAuth2AccessTokenAuthorized"></a>
 
 ### Check if an OAuth 2.0 access token is authorized to access a resource
+
 ```
 POST /warden/oauth2/access-tokens/authorize HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Checks if a token is valid and if the token subject is allowed to perform an action on a resource.
@@ -3259,6 +3392,7 @@ upstream OAuth 2.0 provider, data set through the `accessTokenExtra` field in th
 response as well.
 
 #### Request body
+
 ```json
 {
   "action": "string",
@@ -3335,6 +3469,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed": true,
@@ -3342,10 +3477,10 @@ Status Code **500**
     "string"
   ],
   "client_id": "string",
-  "exp": "2018-11-11T14:05:10Z",
-  "iat": "2018-11-11T14:05:10Z",
+  "exp": "2018-11-12T10:44:13Z",
+  "iat": "2018-11-12T10:44:13Z",
   "iss": "string",
-  "nbf": "2018-11-11T14:05:10Z",
+  "nbf": "2018-11-12T10:44:13Z",
   "scope": "string",
   "session": {
     "property1": {},
@@ -3375,6 +3510,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isOAuth2AccessTokenAuthorized-shell">
+
 ```shell
 curl -X POST /warden/oauth2/access-tokens/authorize \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -3382,6 +3518,7 @@ curl -X POST /warden/oauth2/access-tokens/authorize \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2AccessTokenAuthorized-go">
+
 ```go
 package main
 
@@ -3410,6 +3547,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2AccessTokenAuthorized-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3441,6 +3579,7 @@ fetch('/warden/oauth2/access-tokens/authorize', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2AccessTokenAuthorized-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/warden/oauth2/access-tokens/authorize");
@@ -3466,6 +3605,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2AccessTokenAuthorized-python">
+
 ```python
 import requests
 
@@ -3484,6 +3624,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2AccessTokenAuthorized-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3506,16 +3647,19 @@ p JSON.parse(result)
 <a id="opIdisOAuth2ClientAuthorized"></a>
 
 ### Check if an OAuth 2.0 Client is authorized to access a resource
+
 ```
 POST /warden/oauth2/clients/authorize HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Checks if an OAuth 2.0 Client provided the correct access credentials and and if the client is allowed to perform
 an action on a resource. This endpoint requires a client id, a client secret, a scope, a resource name, an action name and a context.
 
 #### Request body
+
 ```json
 {
   "action": "string",
@@ -3593,6 +3737,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed": true,
@@ -3619,6 +3764,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isOAuth2ClientAuthorized-shell">
+
 ```shell
 curl -X POST /warden/oauth2/clients/authorize \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -3626,6 +3772,7 @@ curl -X POST /warden/oauth2/clients/authorize \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2ClientAuthorized-go">
+
 ```go
 package main
 
@@ -3654,6 +3801,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2ClientAuthorized-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3686,6 +3834,7 @@ fetch('/warden/oauth2/clients/authorize', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2ClientAuthorized-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/warden/oauth2/clients/authorize");
@@ -3711,6 +3860,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2ClientAuthorized-python">
+
 ```python
 import requests
 
@@ -3729,6 +3879,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isOAuth2ClientAuthorized-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3751,15 +3902,18 @@ p JSON.parse(result)
 <a id="opIdisSubjectAuthorized"></a>
 
 ### Check if a subject is authorized to access a resource
+
 ```
 POST /warden/subjects/authorize HTTP/1.1
 Content-Type: application/json
 Accept: application/json
+
 ```
 
 Checks if a subject (e.g. user ID, API key, ...) is allowed to perform a certain action on a resource.
 
 #### Request body
+
 ```json
 {
   "action": "string",
@@ -3833,6 +3987,7 @@ Status Code **500**
 ##### Examples
 
 ###### 200 response
+
 ```json
 {
   "allowed": true,
@@ -3859,6 +4014,7 @@ This operation does not require authentication
 </nav>
 <div class="tab-content">
 <div class="tab-pane active" role="tabpanel" id="tab-isSubjectAuthorized-shell">
+
 ```shell
 curl -X POST /warden/subjects/authorize \
   -H 'Content-Type: application/json' \  -H 'Accept: application/json'
@@ -3866,6 +4022,7 @@ curl -X POST /warden/subjects/authorize \
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isSubjectAuthorized-go">
+
 ```go
 package main
 
@@ -3894,6 +4051,7 @@ func main() {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isSubjectAuthorized-node">
+
 ```nodejs
 const fetch = require('node-fetch');
 const input = '{
@@ -3922,6 +4080,7 @@ fetch('/warden/subjects/authorize', {
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isSubjectAuthorized-java">
+
 ```java
 // This sample needs improvement.
 URL obj = new URL("/warden/subjects/authorize");
@@ -3947,6 +4106,7 @@ System.out.println(response.toString());
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isSubjectAuthorized-python">
+
 ```python
 import requests
 
@@ -3965,6 +4125,7 @@ print r.json()
 
 </div>
 <div class="tab-pane" role="tabpanel"  id="tab-isSubjectAuthorized-ruby">
+
 ```ruby
 require 'rest-client'
 require 'json'
@@ -3990,6 +4151,7 @@ p JSON.parse(result)
 #### AuthenticationOAuth2ClientCredentialsRequest
 
 <a id="schemaauthenticationoauth2clientcredentialsrequest"></a>
+
 ```json
 {
   "client_id": "string",
@@ -3998,6 +4160,7 @@ p JSON.parse(result)
     "string"
   ]
 }
+
 ```
 
 #### Properties
@@ -4012,6 +4175,7 @@ p JSON.parse(result)
 #### AuthenticationOAuth2IntrospectionRequest
 
 <a id="schemaauthenticationoauth2introspectionrequest"></a>
+
 ```json
 {
   "scope": [
@@ -4019,6 +4183,7 @@ p JSON.parse(result)
   ],
   "token": "string"
 }
+
 ```
 
 #### Properties
@@ -4032,8 +4197,10 @@ p JSON.parse(result)
 #### Authenticator
 
 <a id="schemaauthenticator"></a>
+
 ```json
 {}
+
 ```
 
 #### Properties
@@ -4044,8 +4211,10 @@ p JSON.parse(result)
 #### Firewall
 
 <a id="schemafirewall"></a>
+
 ```json
 {}
+
 ```
 
 *Firewall offers various validation strategies for access tokens.*
@@ -4058,11 +4227,13 @@ p JSON.parse(result)
 #### Handler
 
 <a id="schemahandler"></a>
+
 ```json
 {
   "H": {},
   "Manager": {}
 }
+
 ```
 
 #### Properties
@@ -4076,6 +4247,7 @@ p JSON.parse(result)
 #### IntrospectionResponse
 
 <a id="schemaintrospectionresponse"></a>
+
 ```json
 {
   "active": true,
@@ -4096,6 +4268,7 @@ p JSON.parse(result)
   "token_type": "string",
   "username": "string"
 }
+
 ```
 
 #### Properties
@@ -4120,8 +4293,10 @@ p JSON.parse(result)
 #### Manager
 
 <a id="schemamanager"></a>
+
 ```json
 {}
+
 ```
 
 #### Properties
@@ -4132,8 +4307,10 @@ p JSON.parse(result)
 #### OAuth2ClientCredentialsAuthentication
 
 <a id="schemaoauth2clientcredentialsauthentication"></a>
+
 ```json
 {}
+
 ```
 
 #### Properties
@@ -4144,8 +4321,10 @@ p JSON.parse(result)
 #### OAuth2IntrospectionAuthentication
 
 <a id="schemaoauth2introspectionauthentication"></a>
+
 ```json
 {}
+
 ```
 
 #### Properties
@@ -4156,10 +4335,12 @@ p JSON.parse(result)
 #### Session
 
 <a id="schemasession"></a>
+
 ```json
 {
   "GetSubject": "string"
 }
+
 ```
 
 #### Properties
@@ -4172,6 +4353,7 @@ p JSON.parse(result)
 #### WardenSubjectAuthorizationRequest
 
 <a id="schemawardensubjectauthorizationrequest"></a>
+
 ```json
 {
   "action": "string",
@@ -4182,6 +4364,7 @@ p JSON.parse(result)
   "resource": "string",
   "subject": "string"
 }
+
 ```
 
 *AccessRequest is the warden's request object.*
@@ -4200,8 +4383,10 @@ p JSON.parse(result)
 #### Writer
 
 <a id="schemawriter"></a>
+
 ```json
 {}
+
 ```
 
 *Writer is a helper to write arbitrary data to a ResponseWriter*
@@ -4214,11 +4399,13 @@ p JSON.parse(result)
 #### authenticationDefaultSession
 
 <a id="schemaauthenticationdefaultsession"></a>
+
 ```json
 {
   "allowed": true,
   "sub": "string"
 }
+
 ```
 
 #### Properties
@@ -4232,11 +4419,13 @@ p JSON.parse(result)
 #### authenticationOAuth2ClientCredentialsSession
 
 <a id="schemaauthenticationoauth2clientcredentialssession"></a>
+
 ```json
 {
   "allowed": true,
   "sub": "string"
 }
+
 ```
 
 #### Properties
@@ -4250,6 +4439,7 @@ p JSON.parse(result)
 #### authenticationOAuth2Session
 
 <a id="schemaauthenticationoauth2session"></a>
+
 ```json
 {
   "allowed": true,
@@ -4257,10 +4447,10 @@ p JSON.parse(result)
     "string"
   ],
   "client_id": "string",
-  "exp": "2018-11-11T14:05:10Z",
-  "iat": "2018-11-11T14:05:10Z",
+  "exp": "2018-11-12T10:44:13Z",
+  "iat": "2018-11-12T10:44:13Z",
   "iss": "string",
-  "nbf": "2018-11-11T14:05:10Z",
+  "nbf": "2018-11-12T10:44:13Z",
   "scope": "string",
   "session": {
     "property1": {},
@@ -4269,6 +4459,7 @@ p JSON.parse(result)
   "sub": "string",
   "username": "string"
 }
+
 ```
 
 #### Properties
@@ -4292,6 +4483,7 @@ p JSON.parse(result)
 #### healthNotReadyStatus
 
 <a id="schemahealthnotreadystatus"></a>
+
 ```json
 {
   "errors": {
@@ -4299,6 +4491,7 @@ p JSON.parse(result)
     "property2": "string"
   }
 }
+
 ```
 
 #### Properties
@@ -4312,10 +4505,12 @@ p JSON.parse(result)
 #### healthStatus
 
 <a id="schemahealthstatus"></a>
+
 ```json
 {
   "status": "string"
 }
+
 ```
 
 #### Properties
@@ -4328,6 +4523,7 @@ p JSON.parse(result)
 #### policy
 
 <a id="schemapolicy"></a>
+
 ```json
 {
   "actions": [
@@ -4359,6 +4555,7 @@ p JSON.parse(result)
     "string"
   ]
 }
+
 ```
 
 #### Properties
@@ -4381,6 +4578,7 @@ p JSON.parse(result)
 #### role
 
 <a id="schemarole"></a>
+
 ```json
 {
   "id": "string",
@@ -4388,6 +4586,7 @@ p JSON.parse(result)
     "string"
   ]
 }
+
 ```
 
 *Role represents a group of users that share the same role. A role could be an administrator, a moderator, a regular
@@ -4404,12 +4603,14 @@ user or some other sort of role.*
 #### roleMembers
 
 <a id="schemarolemembers"></a>
+
 ```json
 {
   "members": [
     "string"
   ]
 }
+
 ```
 
 #### Properties
@@ -4422,6 +4623,7 @@ user or some other sort of role.*
 #### swaggerCreatePolicyParameters
 
 <a id="schemaswaggercreatepolicyparameters"></a>
+
 ```json
 {
   "Body": {
@@ -4455,6 +4657,7 @@ user or some other sort of role.*
     ]
   }
 }
+
 ```
 
 #### Properties
@@ -4467,6 +4670,7 @@ user or some other sort of role.*
 #### swaggerDoesWardenAllowAccessRequestParameters
 
 <a id="schemaswaggerdoeswardenallowaccessrequestparameters"></a>
+
 ```json
 {
   "Body": {
@@ -4479,6 +4683,7 @@ user or some other sort of role.*
     "subject": "string"
   }
 }
+
 ```
 
 #### Properties
@@ -4491,6 +4696,7 @@ user or some other sort of role.*
 #### swaggerDoesWardenAllowClientRequestParameters
 
 <a id="schemaswaggerdoeswardenallowclientrequestparameters"></a>
+
 ```json
 {
   "Body": {
@@ -4507,6 +4713,7 @@ user or some other sort of role.*
     ]
   }
 }
+
 ```
 
 #### Properties
@@ -4519,6 +4726,7 @@ user or some other sort of role.*
 #### swaggerDoesWardenAllowTokenAccessRequestParameters
 
 <a id="schemaswaggerdoeswardenallowtokenaccessrequestparameters"></a>
+
 ```json
 {
   "Body": {
@@ -4534,6 +4742,7 @@ user or some other sort of role.*
     "token": "string"
   }
 }
+
 ```
 
 #### Properties
@@ -4546,10 +4755,12 @@ user or some other sort of role.*
 #### swaggerGetPolicyParameters
 
 <a id="schemaswaggergetpolicyparameters"></a>
+
 ```json
 {
   "id": "string"
 }
+
 ```
 
 #### Properties
@@ -4562,11 +4773,13 @@ user or some other sort of role.*
 #### swaggerListPolicyParameters
 
 <a id="schemaswaggerlistpolicyparameters"></a>
+
 ```json
 {
   "limit": 0,
   "offset": 0
 }
+
 ```
 
 #### Properties
@@ -4580,6 +4793,7 @@ user or some other sort of role.*
 #### swaggerListPolicyResponse
 
 <a id="schemaswaggerlistpolicyresponse"></a>
+
 ```json
 {
   "Body": [
@@ -4615,6 +4829,7 @@ user or some other sort of role.*
     }
   ]
 }
+
 ```
 
 *A policy*
@@ -4629,6 +4844,7 @@ user or some other sort of role.*
 #### swaggerUpdatePolicyParameters
 
 <a id="schemaswaggerupdatepolicyparameters"></a>
+
 ```json
 {
   "Body": {
@@ -4663,6 +4879,7 @@ user or some other sort of role.*
   },
   "id": "string"
 }
+
 ```
 
 #### Properties
@@ -4676,6 +4893,7 @@ user or some other sort of role.*
 #### swaggerWardenBaseRequest
 
 <a id="schemaswaggerwardenbaserequest"></a>
+
 ```json
 {
   "action": "string",
@@ -4685,6 +4903,7 @@ user or some other sort of role.*
   },
   "resource": "string"
 }
+
 ```
 
 *swager:model authorizedBaseRequest*
@@ -4702,10 +4921,12 @@ user or some other sort of role.*
 #### version
 
 <a id="schemaversion"></a>
+
 ```json
 {
   "version": "string"
 }
+
 ```
 
 #### Properties
@@ -4718,6 +4939,7 @@ user or some other sort of role.*
 #### wardenOAuth2AccessTokenAuthorizationRequest
 
 <a id="schemawardenoauth2accesstokenauthorizationrequest"></a>
+
 ```json
 {
   "action": "string",
@@ -4731,6 +4953,7 @@ user or some other sort of role.*
   ],
   "token": "string"
 }
+
 ```
 
 #### Properties
@@ -4748,6 +4971,7 @@ user or some other sort of role.*
 #### wardenOAuth2AccessTokenAuthorizationResponse
 
 <a id="schemawardenoauth2accesstokenauthorizationresponse"></a>
+
 ```json
 {
   "allowed": true,
@@ -4755,10 +4979,10 @@ user or some other sort of role.*
     "string"
   ],
   "client_id": "string",
-  "exp": "2018-11-11T14:05:10Z",
-  "iat": "2018-11-11T14:05:10Z",
+  "exp": "2018-11-12T10:44:13Z",
+  "iat": "2018-11-12T10:44:13Z",
   "iss": "string",
-  "nbf": "2018-11-11T14:05:10Z",
+  "nbf": "2018-11-12T10:44:13Z",
   "scope": "string",
   "session": {
     "property1": {},
@@ -4767,6 +4991,7 @@ user or some other sort of role.*
   "sub": "string",
   "username": "string"
 }
+
 ```
 
 #### Properties
@@ -4790,6 +5015,7 @@ user or some other sort of role.*
 #### wardenOAuth2ClientAuthorizationRequest
 
 <a id="schemawardenoauth2clientauthorizationrequest"></a>
+
 ```json
 {
   "action": "string",
@@ -4804,6 +5030,7 @@ user or some other sort of role.*
     "string"
   ]
 }
+
 ```
 
 #### Properties
@@ -4822,11 +5049,13 @@ user or some other sort of role.*
 #### wardenOAuth2ClientAuthorizationResponse
 
 <a id="schemawardenoauth2clientauthorizationresponse"></a>
+
 ```json
 {
   "allowed": true,
   "sub": "string"
 }
+
 ```
 
 #### Properties
@@ -4840,11 +5069,13 @@ user or some other sort of role.*
 #### wardenSubjectAuthorizationResponse
 
 <a id="schemawardensubjectauthorizationresponse"></a>
+
 ```json
 {
   "allowed": true,
   "sub": "string"
 }
+
 ```
 
 #### Properties
